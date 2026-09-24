@@ -97,8 +97,21 @@ export default function StaffProfiles() {
             <span className="text-[1.05rem] text-muted">{s.role}</span>
           </h3>
           <p className="mt-3 inline-flex rounded-full bg-mist px-3 py-1 text-[0.85rem] font-semibold text-primary">{s.career}</p>
-          <p className="mt-4 font-serif text-[1.2rem] leading-[1.6] text-primary md:text-[1.35rem]">{s.quote}</p>
-          <p className="mt-4 leading-[1.85] text-ink/75">{s.intro}</p>
+          <p className="mt-5 font-serif text-[1.3rem] font-semibold leading-[1.5] text-primary md:text-[1.5rem]">{s.headline}</p>
+          <p className="mt-3 leading-[1.85] text-ink/75">{s.intro}</p>
+
+          <div className="mt-5 flex flex-wrap items-center gap-1.5">
+            <span className="mr-1 text-[0.85rem] font-semibold text-ink">전문 분야</span>
+            {s.specialties.map((t) => (
+              <span key={t} className="rounded-full border border-line px-3 py-1 text-[0.85rem] text-ink/80">
+                {t}
+              </span>
+            ))}
+          </div>
+
+          <blockquote className="relative mt-6 border-l-2 border-primary/40 pl-4 font-serif text-[1.05rem] leading-[1.7] text-ink/85 md:text-[1.1rem]">
+            “{s.quote}”
+          </blockquote>
 
           <ul className="mt-5 space-y-1 text-[0.95rem] text-ink/85">
             {s.current.map((c) => (
