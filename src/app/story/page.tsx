@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Button, Container, Eyebrow, PageHero, Photo } from "@/components/ui";
+import { Button, Container, Eyebrow, PageHero, Photo, SectionTitle } from "@/components/ui";
+import StaffDetails from "@/components/StaffDetails";
+import ScrollToHash from "@/components/ScrollToHash";
 import { site } from "@/config/site";
 import { images } from "@/content/images";
 
@@ -101,6 +103,17 @@ export default function StoryPage() {
             </p>
           </div>
           <Photo label={`실장 ${site.manager.name}`} src={images.manager} position="top" shape="arch" className="order-1 aspect-[4/5] w-full md:order-2" />
+        </Container>
+      </section>
+
+      <ScrollToHash />
+      {/* 테라피스트 상세 프로필 (홈에서 옮겨옴) */}
+      <section id="therapists" className="scroll-mt-24 py-20 md:py-28">
+        <Container>
+          <SectionTitle en="Our Therapists">스파코지 테라피스트 프로필</SectionTitle>
+          <div className="mt-12">
+            <StaffDetails />
+          </div>
         </Container>
       </section>
 

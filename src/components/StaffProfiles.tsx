@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { staff } from "@/content/staff";
 import { site } from "@/config/site";
+
 
 // 상담 버튼: 카카오톡 비즈니스 채널 1:1 채팅 (채널 ID는 src/config/site.ts, 입력 전에는 전화로 연결)
 const consultHref = site.links.kakaoChat || site.links.tel;
@@ -10,13 +12,11 @@ const consultHref = site.links.kakaoChat || site.links.tel;
 /** 디어청담식 프로필: 한 명씩 크게 보여주고 이름 탭·화살표·밀기로 넘깁니다. */
 export default function StaffProfiles() {
   const [active, setActive] = useState(0);
-  const [openCareer, setOpenCareer] = useState(false);
   const touchX = useRef<number | null>(null);
   const s = staff[active];
 
   const go = (i: number) => {
     setActive((i + staff.length) % staff.length);
-    setOpenCareer(false);
   };
 
   return (
@@ -109,38 +109,9 @@ export default function StaffProfiles() {
             ))}
           </div>
 
-          <blockquote className="relative mt-6 border-l-2 border-primary/40 pl-4 font-serif text-[1.05rem] leading-[1.7] text-ink/85 md:text-[1.1rem]">
-            “{s.quote}”
-          </blockquote>
-
-          <ul className="mt-5 space-y-1 text-[0.95rem] text-ink/85">
-            {s.current.map((c) => (
-              <li key={c} className="flex gap-2">
-                <span className="text-muted">現</span>
-                {c}
-              </li>
-            ))}
-          </ul>
-
-          <button
-            type="button"
-            onClick={() => setOpenCareer((v) => !v)}
-            aria-expanded={openCareer}
-            className="mt-5 inline-flex items-center gap-2 border-b border-ink/60 pb-0.5 text-[0.92rem] font-semibold text-ink"
-          >
-            경력보기
-            <span className={`transition-transform ${openCareer ? "rotate-45" : ""}`}>+</span>
-          </button>
-          {openCareer && (
-            <ul className="fade-up mt-4 space-y-1.5 rounded-[12px] bg-mist p-5 text-[0.93rem] text-ink/80">
-              {s.history.map((c) => (
-                <li key={c} className="flex gap-2">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
-                  {c}
-                </li>
-              ))}
-            </ul>
-          )}
+          <Link href="/story#therapists" className="mt-5 inline-flex items-center gap-2 border-b border-ink/60 pb-0.5 text-[0.92rem] font-semibold text-ink">
+            자세한 프로필 보기 <span aria-hidden>→</span>
+          </Link>
 
           <div className="mt-7 grid grid-cols-2 gap-2">
             <a
