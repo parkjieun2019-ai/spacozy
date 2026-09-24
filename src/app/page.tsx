@@ -129,8 +129,8 @@ export default function Home() {
       {/* 6. 고민별 — 탭을 누르면 추천이 바뀜 */}
       <section className="bg-mist py-24 md:py-36">
         <Container>
-          <SectionTitle en="Your Concern" sub="가장 신경 쓰이는 고민을 눌러 보세요. 맞는 관리를 바로 추천해 드립니다.">
-            오늘, 어디가 가장 무거우신가요?
+          <SectionTitle en="Your Concern" sub="고민을 하나 누르면, 아래에 맞는 관리가 바로 나와요.">
+            어떤 고민이 있으신가요?
           </SectionTitle>
           <div className="reveal mt-12">
             <ConcernTabs />

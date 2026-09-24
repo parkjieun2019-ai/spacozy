@@ -1,45 +1,81 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { concerns } from "@/content/concerns";
 import { programs } from "@/content/programs";
 import { images } from "@/content/images";
 
 const bySlug = Object.fromEntries(programs.map((p) => [p.slug, p]));
 
-/** 고민 탭을 누르면 추천 관리가 바로 바뀌는 영역 */
+function StepLabel({ no, children }: { no: number; children: React.ReactNode }) {
+  return (
+    <p className="flex items-start gap-3 text-[1.02rem] font-semibold leading-[1.6] text-ink">
+      <span className="mt-0.5 shrink-0 whitespace-nowrap rounded-full bg-primary px-2.5 py-0.5 text-[0.75rem] tracking-[0.08em] text-paper">STEP {no}</span>
+      {children}
+    </p>
+  );
+}
+
+/** 1단계 고민 선택 → 2단계 추천 관리 (한눈에 보이는 선택형) */
 export default function ConcernTabs() {
   const [active, setActive] = useState(concerns[0].slug);
   const current = concerns.find((c) => c.slug === active) ?? concerns[0];
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  const pick = (slug: string) => {
+    setActive(slug);
+    // 휴대폰에서는 결과가 화면 아래에 있으면 살짝 보이도록 이동
+    const el = resultRef.current;
+    if (el && window.innerWidth < 768) {
+      const top = el.getBoundingClientRect().top;
+      if (top > window.innerHeight * 0.6) window.scrollBy({ top: top - window.innerHeight * 0.35, behavior: "smooth" });
+    }
+  };
 
   return (
-    <div>
-      <div role="tablist" aria-label="고민 선택" className="-mx-6 flex gap-2 overflow-x-auto px-6 pb-2 md:mx-0 md:flex-wrap md:justify-center md:px-0">
+    <div className="mx-auto max-w-4xl">
+      {/* STEP 1 */}
+      <StepLabel no={1}>어떤 고민이 있으세요?</StepLabel>
+      <div role="radiogroup" aria-label="고민 선택" className="mt-4 grid grid-cols-2 gap-2 md:grid-cols-5">
         {concerns.map((c) => {
           const on = c.slug === active;
           return (
             <button
               key={c.slug}
-              role="tab"
-              aria-selected={on}
-              onClick={() => setActive(c.slug)}
-              className={`min-h-12 shrink-0 rounded-full border px-5 text-[0.98rem] transition-colors duration-300 ${
+              type="button"
+              role="radio"
+              aria-checked={on}
+              onClick={() => pick(c.slug)}
+              className={`flex min-h-13 items-center justify-center gap-1.5 rounded-[10px] border px-2 text-[0.95rem] transition-colors duration-200 ${
                 on ? "border-primary bg-primary font-semibold text-paper" : "border-line bg-paper text-ink hover:border-primary"
               }`}
             >
+              {on && <span aria-hidden>✓</span>}
               {c.name}
             </button>
           );
         })}
       </div>
 
-      <div role="tabpanel" className="mt-10">
-        <p className="text-center text-[1.05rem] text-muted">
-          <span className="font-semibold text-ink">{current.desc}</span> 이 고민이시라면
-        </p>
-        {current.note && <p className="mx-auto mt-3 max-w-xl text-center text-muted">{current.note}</p>}
-        <div className="mx-auto mt-8 grid max-w-4xl gap-5 md:grid-cols-2">
+      {/* 연결 화살표 */}
+      <div className="my-5 flex justify-center text-primary" aria-hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <path d="M12 4v15M6 13l6 6 6-6" />
+        </svg>
+      </div>
+
+      {/* STEP 2 */}
+      <div ref={resultRef} className="rounded-[18px] border border-primary/25 bg-paper p-5 md:p-8">
+        <StepLabel no={2}>
+          <span>
+            ‘<span className="text-primary">{current.name}</span>’ 고민이라면, 이 관리를 추천해요
+          </span>
+        </StepLabel>
+        <p className="mt-2 text-[0.95rem] text-muted">{current.desc}</p>
+        {current.note && <p className="mt-2 text-[0.95rem] text-muted">{current.note}</p>}
+
+        <div className="mt-5 grid gap-3 md:grid-cols-2 md:gap-4">
           {current.programs.map((slug, i) => {
             const p = bySlug[slug];
             if (!p) return null;
@@ -47,17 +83,17 @@ export default function ConcernTabs() {
               <Link
                 key={`${current.slug}-${slug}`}
                 href={`/programs#${slug}`}
-                className="fade-up group flex overflow-hidden rounded-[18px] border border-line bg-paper transition-shadow duration-300 hover:shadow-lg hover:shadow-ink/5"
+                className="fade-up group flex overflow-hidden rounded-[14px] border border-line bg-mist/40 transition-shadow duration-300 hover:shadow-lg hover:shadow-ink/5"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={images.programs[slug]} alt="" className="tone-photo h-auto w-32 shrink-0 object-cover md:w-40" />
-                <div className="flex flex-col justify-center p-5 md:p-6">
-                  {i === 0 && (
-                    <span className="mb-2 w-fit rounded-full bg-mist px-3 py-0.5 text-[0.8rem] font-semibold text-primary">추천 1순위</span>
-                  )}
-                  <p className="font-serif text-[1.15rem] font-semibold leading-snug text-ink">{p.name}</p>
-                  <p className="mt-2 text-[0.95rem] text-muted">{p.summary}</p>
-                  <p className="mt-3 text-[0.9rem] font-semibold text-primary">자세히 보기 →</p>
+                <img src={images.programs[slug]} alt="" className="tone-photo w-28 shrink-0 object-cover md:w-36" />
+                <div className="flex flex-1 flex-col justify-center p-4 md:p-5">
+                  <span className={`mb-2 w-fit rounded-full px-2.5 py-0.5 text-[0.78rem] font-semibold ${i === 0 ? "bg-primary text-paper" : "bg-line/60 text-ink/70"}`}>
+                    {i === 0 ? "가장 추천" : "함께 추천"}
+                  </span>
+                  <p className="font-serif text-[1.1rem] font-semibold leading-snug text-ink">{p.name}</p>
+                  <p className="mt-1.5 text-[0.9rem] leading-[1.6] text-muted">{p.summary}</p>
+                  <p className="mt-2 text-[0.88rem] font-semibold text-primary">자세히 보기 →</p>
                 </div>
               </Link>
             );
