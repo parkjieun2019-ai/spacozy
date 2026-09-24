@@ -1,13 +1,13 @@
 // 사이트 전체에서 쓰는 연락처·링크. 값이 바뀌면 이 파일만 고치면 됩니다.
 
-// TODO: 네이버 예약 주소를 받으면 교체 (지금은 네이버 지도 검색 결과로 연결)
-const NAVER_BOOKING_URL = "";
+// 네이버 예약 (스파코지 예약 페이지)
+const NAVER_BOOKING_URL = "https://m.booking.naver.com/booking/13/bizes/857141";
 // TODO: 카카오톡 채널 개설 후 채널 ID(예: _xxxxx) 입력
 const KAKAO_CHANNEL_ID = "";
 // TODO: 네이버 톡톡 ID (스마트플레이스 > 톡톡 설정의 talk.naver.com/ct/xxxxx 에서 xxxxx)
 const NAVER_TALK_ID = "";
 
-const naverPlaceSearch = "https://map.naver.com/p/search/" + encodeURIComponent("스파코지 죽전");
+const naverPlaceSearch = "https://map.naver.com/p/entry/place/36561423";
 
 export const site = {
   name: "스파코지",

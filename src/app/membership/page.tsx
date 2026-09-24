@@ -23,7 +23,7 @@ export default function MembershipPage() {
             </p>
             {/* 첫 방문 혜택은 네이버 플레이스 공개 기준과 동일하게 유지 */}
             <p className="mt-6 rounded-[2px] bg-paper/10 p-5 text-paper/90">
-              혜택 내용은 네이버 예약 페이지에서 확인하실 수 있습니다.
+              첫 방문 시 비회원가에서 <strong className="text-paper">최대 40% 할인</strong>된 가격으로 관리받으실 수 있어요. (프로그램별 할인율 상이)
             </p>
             <div className="mt-auto pt-10">
               <Button href={site.links.booking} variant="light">

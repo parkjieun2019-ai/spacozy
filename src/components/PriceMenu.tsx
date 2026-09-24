@@ -39,6 +39,8 @@ export default function PriceMenu() {
           <p className="text-[0.92rem] text-muted">{cat.desc}</p>
         </div>
 
+        {cat.note && <p className="mt-4 rounded-[10px] bg-mist px-4 py-3 text-[0.92rem] text-ink/80">{cat.note}</p>}
+
         {cat.items.length === 0 ? (
           <p className="py-10 text-center text-muted">세부 프로그램과 가격을 준비하고 있어요. 전화나 상담으로 먼저 안내해 드립니다.</p>
         ) : (
@@ -48,36 +50,38 @@ export default function PriceMenu() {
                 <div className="flex-1">
                   <p className="flex flex-wrap items-center gap-2 text-[1.08rem] font-semibold text-ink">
                     {it.name}
-                    {it.signature && (
-                      <span className="rounded-full bg-primary px-2 py-0.5 text-[0.72rem] font-semibold text-paper">시그니처</span>
-                    )}
                   </p>
                   <p className="mt-1 text-[0.9rem] text-muted">
                     {[it.desc, it.duration].filter(Boolean).join(" · ")}
-                    {it.signature && (
-                      <a href={`#${it.signature}`} className="ml-2 font-semibold text-primary">
-                        관리 순서 보기 ↑
-                      </a>
-                    )}
                   </p>
                 </div>
 
                 <div className="flex items-center justify-between gap-4 sm:justify-end">
-                  <div className="text-right">
+                  <dl className="grid min-w-[190px] grid-cols-[auto_1fr] items-baseline gap-x-3 gap-y-0.5 text-right">
                     {it.price === null ? (
-                      <p className="text-[0.95rem] font-semibold text-muted">가격 입력 예정</p>
+                      <>
+                        <dt className="text-[0.82rem] text-muted">가격</dt>
+                        <dd className="text-[1rem] font-semibold text-ink">{it.priceNote ?? "상담 안내"}</dd>
+                      </>
                     ) : (
                       <>
-                        <p className={`font-semibold ${it.memberPrice ? "text-[0.9rem] text-muted line-through" : "text-[1.15rem] text-ink"}`}>{won(it.price)}</p>
-                        {it.memberPrice && (
-                          <p className="text-[1.15rem] font-semibold text-primary">
-                            <span className="mr-1 text-[0.78rem]">회원가</span>
-                            {won(it.memberPrice)}
-                          </p>
-                        )}
+                        <dt className="text-[0.82rem] text-muted">1회</dt>
+                        <dd className="text-[1rem] font-semibold text-ink">{won(it.price)}</dd>
                       </>
                     )}
-                  </div>
+                    {it.memberPrice ? (
+                      <>
+                        <dt className="text-[0.82rem] text-muted">회원가</dt>
+                        <dd className="text-[1rem] font-semibold text-ink">{won(it.memberPrice)}</dd>
+                      </>
+                    ) : null}
+                    {it.firstPrice || it.firstNote ? (
+                      <>
+                        <dt className="text-[0.82rem] font-semibold text-primary">첫 방문</dt>
+                        <dd className="text-[1.12rem] font-bold text-primary">{it.firstPrice ? won(it.firstPrice) : it.firstNote}</dd>
+                      </>
+                    ) : null}
+                  </dl>
                   <a
                     href={site.links.booking}
                     target="_blank"
