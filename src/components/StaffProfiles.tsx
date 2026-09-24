@@ -73,7 +73,7 @@ export default function StaffProfiles() {
         }}
       >
         {/* 사진: 뒤에 큰 'Cozy,' 글자 */}
-        <div className="relative h-[330px] overflow-hidden rounded-[18px] bg-[#e9ebe8] sm:h-[420px] md:h-[560px]">
+        <div className="relative h-[330px] overflow-hidden rounded-[18px] bg-[#ede7d9] sm:h-[420px] md:h-[560px]">
           <p
             aria-hidden
             className="pointer-events-none absolute -left-2 top-4 select-none font-display text-[7rem] italic leading-none text-ink/[0.07] md:-left-4 md:top-8 md:text-[12rem]"

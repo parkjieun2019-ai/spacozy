@@ -22,13 +22,13 @@
 
 @theme {
   --color-paper: #ffffff;
-  --color-mist: #f4f6f4;
-  --color-line: #e1e6e2;
-  --color-muted: #666b68;
-  --color-primary: #16523c;
-  --color-primary-soft: #1f6a4e;
-  --color-accent: #4f8a6c;
-  --color-ink: #1a1a1a;
+  --color-mist: #f6f3ec;
+  --color-line: #e4dfd2;
+  --color-muted: #746d62;
+  --color-primary: #123b2c;
+  --color-primary-soft: #1e5a41;
+  --color-accent: #b8935a;
+  --color-ink: #1b1815;
 
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Malgun Gothic", sans-serif;
   --font-serif: "MaruBuri", "Nanum Myeongjo", serif;
@@ -121,9 +121,9 @@ h3 {
   }
 }
 
-/* 일루미엘 톤: 사진을 맑고 깨끗하게 */
+/* 웜톤 에디토리얼: 사진을 살짝 따뜻하고 고급스럽게 */
 .tone-photo {
-  filter: saturate(0.95) brightness(1.02);
+  filter: saturate(0.94) brightness(1.02) sepia(0.05);
 }
 
 

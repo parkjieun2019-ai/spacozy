@@ -52,12 +52,12 @@ type BtnProps = {
 
 export function Button({ href, children, variant = "solid", external, className = "" }: BtnProps) {
   const styles = {
-    solid: "bg-primary text-paper hover:bg-primary-soft",
+    solid: "bg-primary text-paper shadow-sm shadow-primary/20 hover:bg-primary-soft hover:shadow-md hover:shadow-primary/25",
     outline: "border border-primary/70 text-primary hover:bg-primary hover:text-paper",
-    light: "bg-paper text-primary hover:bg-mist",
+    light: "bg-paper text-primary shadow-sm shadow-ink/10 hover:bg-mist",
     "ghost-light": "border border-paper/60 text-paper hover:bg-paper hover:text-primary",
   }[variant];
-  const cls = `group inline-flex min-h-14 items-center justify-center gap-4 px-8 text-[0.98rem] tracking-[0.04em] transition-colors duration-300 ${styles} ${className}`;
+  const cls = `group inline-flex min-h-14 items-center justify-center gap-4 px-8 text-[0.98rem] tracking-[0.04em] transition-all duration-300 hover:-translate-y-px ${styles} ${className}`;
   const inner = (
     <>
       {children}
@@ -126,9 +126,9 @@ export function Photo({
       </div>
     );
   const bg = {
-    sand: "from-mist via-line to-[#c9d3cc]",
-    wood: "from-[#d5e0d8] via-[#9fb8a8] to-accent",
-    dark: "from-[#2f6b53] via-primary-soft to-primary",
+    sand: "from-mist via-line to-[#d8c9a8]",
+    wood: "from-[#ecdfc4] via-[#cba874] to-accent",
+    dark: "from-[#1c4a37] via-primary-soft to-primary",
   }[tone];
   return (
     <div role="img" aria-label={`${label} (사진 준비 중)`} className={`relative overflow-hidden bg-gradient-to-br ${bg} ${radius} ${className}`}>

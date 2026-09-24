@@ -39,7 +39,7 @@ export default function Home() {
           <p className="fade-up font-display text-[2.35rem] leading-[1.08] tracking-[-0.01em] text-ink sm:text-[3.4rem] md:text-[5.4rem]">
             SPA COZY,
             <br />
-            <span className="italic text-primary">The Quiet Hands</span>
+            <span className="italic text-accent">The Quiet Hands</span>
           </p>
           <div className="mt-8 grid gap-8 md:mt-12 md:grid-cols-[1fr_auto] md:items-end">
             <div>
