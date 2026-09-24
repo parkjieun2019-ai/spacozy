@@ -15,6 +15,10 @@ export type Staff = {
   photoFocus: string;
   photoZoom: number;
   quote: string;
+  /** 現 직함 */
+  current: string[];
+  /** 경력보기에 펼쳐지는 목록 — 사실 확인된 내용만 (TODO: 자격증·교육 이력 받으면 추가) */
+  history: string[];
   bookingUrl: string; // TODO: 네이버 예약에서 담당자별 링크가 있으면 교체
 };
 
@@ -31,6 +35,8 @@ export const staff: Staff[] = [
     photoFocus: "50% 22%",
     photoZoom: 1,
     quote: "몸이 가벼워지는 순간, 얼굴의 선도 함께 살아납니다.",
+    current: ["스파코지 대표원장"],
+    history: [`${site.director.since}년 에스테틱 입문 · 경력 ${site.director.years}년`, "전신 밸런스 수기 테라피", "페이스 선(線) 디자인", "목 · 어깨 · 등 이완 케어"],
     bookingUrl: site.links.booking,
   },
   {
@@ -45,6 +51,8 @@ export const staff: Staff[] = [
     photoFocus: "58% 16%",
     photoZoom: 1.1,
     quote: "문턱을 넘는 순간부터, 당신의 쉼이 시작됩니다.",
+    current: ["스파코지 실장 · 뷰티 큐레이터"],
+    history: [`에스테틱 경력 ${site.manager.years}`, "웰컴 차트 맞춤 상담", "뷰티 큐레이팅", "전 프로그램 관리 가능"],
     bookingUrl: site.links.booking,
   },
 ];

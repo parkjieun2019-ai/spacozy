@@ -3,7 +3,7 @@ import { Button, Container, Eyebrow, Photo, SectionTitle, ViewMore } from "@/com
 import { programs } from "@/content/programs";
 import ConcernTabs from "@/components/ConcernTabs";
 import HeroSlider from "@/components/HeroSlider";
-import StaffCards from "@/components/StaffCards";
+import StaffProfiles from "@/components/StaffProfiles";
 import ReviewCards from "@/components/ReviewCards";
 import { site } from "@/config/site";
 import { images } from "@/content/images";
@@ -64,11 +64,11 @@ export default function Home() {
       {/* 2. 원장 · 실장 소개 — 병원 의료진 소개처럼 */}
       <section className="py-24 md:py-32">
         <Container>
-          <SectionTitle en="Our Therapists" sub="원하시는 담당자를 선택해 바로 예약하거나 상담하실 수 있어요.">
+          <SectionTitle en="Our Therapists" sub="이름을 눌러 담당자를 선택하고, 바로 예약하거나 상담하실 수 있어요.">
             스파코지를 지키는 두 사람
           </SectionTitle>
-          <div className="mt-12 md:mt-16">
-            <StaffCards />
+          <div className="reveal mt-10 md:mt-14">
+            <StaffProfiles />
           </div>
         </Container>
       </section>

@@ -4,6 +4,8 @@
 const NAVER_BOOKING_URL = "";
 // TODO: 카카오톡 채널 개설 후 채널 ID(예: _xxxxx) 입력
 const KAKAO_CHANNEL_ID = "";
+// TODO: 네이버 톡톡 ID (스마트플레이스 > 톡톡 설정의 talk.naver.com/ct/xxxxx 에서 xxxxx)
+const NAVER_TALK_ID = "";
 
 const naverPlaceSearch = "https://map.naver.com/p/search/" + encodeURIComponent("스파코지 죽전");
 
@@ -35,6 +37,7 @@ export const site = {
     reviews: naverPlaceSearch,
     kakaoChat: KAKAO_CHANNEL_ID ? `https://pf.kakao.com/${KAKAO_CHANNEL_ID}/chat` : "",
     kakaoAdd: KAKAO_CHANNEL_ID ? `https://pf.kakao.com/${KAKAO_CHANNEL_ID}/friend` : "",
+    naverTalk: NAVER_TALK_ID ? `https://talk.naver.com/ct/${NAVER_TALK_ID}` : naverPlaceSearch,
     tel: "tel:0312729595",
   },
 } as const;
