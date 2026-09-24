@@ -168,9 +168,9 @@ h3 {
   animation-play-state: paused;
 }
 
-/* 모바일 메뉴: 오른쪽에서 밀려 들어오기 */
+/* 모바일 메뉴: 왼쪽에서 밀려 들어오기 */
 @keyframes menu-slide {
-  from { transform: translateX(100%); }
+  from { transform: translateX(-100%); }
   to { transform: none; }
 }
 .menu-slide {

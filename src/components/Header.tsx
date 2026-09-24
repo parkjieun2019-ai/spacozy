@@ -49,8 +49,8 @@ export default function Header() {
             <NavLink key={n.href} href={n.href} label={n.label} active={pathname === n.href} />
           ))}
         </nav>
-        <div className="col-span-2 col-start-1 lg:col-span-1 lg:col-start-2">
-          <Logo className="!items-start lg:!items-center" />
+        <div className="col-start-2 row-start-1">
+          <Logo />
         </div>
         <nav className="hidden items-center justify-end gap-6 lg:flex xl:gap-9" aria-label="보조 메뉴">
           {nav.slice(3).map((n) => (
@@ -68,7 +68,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="col-start-3 flex h-12 w-12 items-center justify-center justify-self-end lg:hidden"
+          className="col-start-1 row-start-1 -ml-2 flex h-12 w-12 items-center justify-center justify-self-start lg:hidden"
           aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -79,6 +79,15 @@ export default function Header() {
             <span className={`absolute left-0 h-[1.5px] w-7 bg-primary transition-all ${open ? "top-2 -rotate-45" : "top-4"}`} />
           </span>
         </button>
+
+        <a
+          href={site.links.booking}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="col-start-3 row-start-1 justify-self-end border border-primary px-3 py-1.5 text-[0.85rem] font-semibold text-primary lg:hidden"
+        >
+          예약
+        </a>
       </div>
 
     </header>
@@ -86,13 +95,13 @@ export default function Header() {
       {/* 모바일 메뉴 — header의 blur 효과 밖에 두어야 화면 전체 높이를 씁니다 */}
       {open && (
         <div className="fixed inset-x-0 top-18 bottom-0 z-[45] lg:hidden">
-          {/* 왼쪽 어두운 영역 — 누르면 닫힘 */}
+          {/* 어두운 영역 — 누르면 닫힘 */}
           <button type="button" aria-label="메뉴 닫기" onClick={() => setOpen(false)} className="absolute inset-0 bg-ink/40 backdrop-blur-[2px]" />
 
-          {/* 오른쪽 반 화면 메뉴 */}
+          {/* 왼쪽 반 화면 메뉴 */}
           <nav
             aria-label="모바일 메뉴"
-            className="menu-slide absolute inset-y-0 right-0 flex w-[56%] min-w-[210px] max-w-[320px] flex-col overflow-y-auto bg-paper pb-24 shadow-2xl shadow-ink/20"
+            className="menu-slide absolute inset-y-0 left-0 flex w-[56%] min-w-[210px] max-w-[320px] flex-col overflow-y-auto bg-paper pb-24 shadow-2xl shadow-ink/20"
           >
             <ul className="pt-2">
               {[{ href: "/", label: "홈" }, ...nav].map((n) => {
@@ -102,7 +111,7 @@ export default function Header() {
                     <Link
                       href={n.href}
                       aria-current={on ? "page" : undefined}
-                      className={`flex min-h-14 items-center justify-between gap-2 border-l-[3px] py-3.5 pl-4 pr-3 ${on ? "border-primary bg-mist" : "border-transparent"}`}
+                      className={`flex min-h-14 items-center justify-between gap-2 border-l-[3px] py-3.5 pl-5 pr-3 ${on ? "border-primary bg-mist" : "border-transparent"}`}
                     >
                       <span className={`text-[1.08rem] font-semibold leading-snug ${on ? "text-primary" : "text-ink"}`}>{n.label}</span>
                       <span className={`text-[1.2rem] leading-none ${on ? "text-primary" : "text-line"}`} aria-hidden>
