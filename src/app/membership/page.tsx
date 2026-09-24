@@ -19,7 +19,7 @@ export default function MembershipPage() {
             <p className="font-display text-[1.05rem] italic tracking-[0.12em] text-line">Welcome Benefit</p>
             <h2 className="mt-4 font-serif text-[1.6rem] leading-[1.5] md:text-[1.9rem]">첫 방문 웰컴 혜택</h2>
             <p className="mt-5 leading-[1.9] text-paper/85">
-              {site.director.years}년 경력 대표원장의 1:1 수기 테라피를 처음 경험하시는 분께 특별한 혜택을 드립니다.
+              스파코지를 처음 찾아 주시는 분께 드리는 혜택이에요. {site.director.years}년 경력 대표원장의 1:1 수기 테라피를 부담 없이 먼저 경험해 보세요.
             </p>
             {/* 첫 방문 혜택은 네이버 플레이스 공개 기준과 동일하게 유지 */}
             <p className="mt-6 rounded-[2px] bg-paper/10 p-5 text-paper/90">
