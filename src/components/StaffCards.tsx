@@ -15,7 +15,7 @@ export default function StaffCards() {
           className="reveal flex flex-col overflow-hidden rounded-[18px] border border-line bg-paper sm:flex-row"
           style={{ transitionDelay: `${i * 0.12}s` }}
         >
-          <Photo label={`${s.role} ${s.name}`} src={s.photo} className="aspect-[4/3] w-full shrink-0 !rounded-none sm:aspect-auto sm:w-[42%]" />
+          <Photo label={`${s.role} ${s.name}`} src={s.photo} position="top" className="aspect-[4/5] w-full shrink-0 !rounded-none sm:aspect-auto sm:w-[42%]" />
           <div className="flex flex-1 flex-col p-7 md:p-8">
             <p className="font-display text-[1rem] italic text-accent">{s.roleEn}</p>
             <h3 className="mt-2 flex items-baseline gap-3 font-serif text-ink">

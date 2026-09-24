@@ -33,7 +33,7 @@ export default function StoryPage() {
       <section className="py-20 md:py-32">
         <Container className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-20">
           <div className="md:sticky md:top-32 md:self-start">
-            <Photo label={`대표원장 ${site.director.name}`} src={images.directorStory} shape="arch" tone="wood" className="aspect-[4/5] w-full" />
+            <Photo label={`대표원장 ${site.director.name}`} src={images.directorStory} position="top" shape="arch" tone="wood" className="aspect-[4/5] w-full" />
             <p className="mt-5 text-center font-serif text-muted">
               대표원장 <span className="tracking-[0.2em] text-ink">{site.director.name}</span> · 경력 {site.director.years}년
             </p>
@@ -100,7 +100,7 @@ export default function StoryPage() {
               실장 <span className="text-ink">{site.manager.name}</span> · 경력 {site.manager.years}
             </p>
           </div>
-          <Photo label={`실장 ${site.manager.name}`} src={images.manager} shape="arch" className="order-1 aspect-[4/5] w-full md:order-2" />
+          <Photo label={`실장 ${site.manager.name}`} src={images.manager} position="top" shape="arch" className="order-1 aspect-[4/5] w-full md:order-2" />
         </Container>
       </section>
 

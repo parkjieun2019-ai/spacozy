@@ -101,6 +101,7 @@ export function Photo({
   className = "",
   tone = "sand",
   shape = "rect",
+  position = "center",
 }: {
   label: string;
   src?: string;
@@ -108,6 +109,8 @@ export function Photo({
   className?: string;
   tone?: "sand" | "wood" | "dark";
   shape?: "rect" | "arch";
+  /** 사진에서 보여줄 위치 (인물 사진은 "top") */
+  position?: "center" | "top";
 }) {
   const radius = shape === "arch" ? "rounded-t-[999px] rounded-b-[18px]" : "rounded-[18px]";
   if (src)
@@ -118,7 +121,7 @@ export function Photo({
           src={src}
           alt={alt ?? label}
           loading="lazy"
-          className="tone-photo h-full w-full object-cover"
+          className={`tone-photo h-full w-full object-cover ${position === "top" ? "object-[center_18%]" : ""}`}
         />
       </div>
     );
