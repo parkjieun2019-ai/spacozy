@@ -115,7 +115,7 @@ export default function StoryPage() {
               ["맞춤 큐레이션", "대표원장 또는 실장이 그날에 맞는 관리를 제안합니다."],
               ["관리 후 안내", "홈케어 팁과 다음 관리 시기를 알려 드립니다."],
             ].map(([t, d], i) => (
-              <li key={t} className="rounded-[1.5rem] bg-white/70 p-8 ring-1 ring-sand/70">
+              <li key={t} className="border border-sand/80 bg-white/40 p-8">
                 <p className="font-display text-[2rem] leading-none text-wood/70">0{i + 1}</p>
                 <p className="mt-4 font-serif text-[1.2rem] text-green">{t}</p>
                 <p className="mt-2 text-ink/80">{d}</p>

@@ -27,7 +27,7 @@ export default function FaqPage() {
                     </svg>
                   </span>
                 </summary>
-                <div className="mb-5 flex gap-4 rounded-2xl bg-white/70 p-6">
+                <div className="mb-5 flex gap-4 rounded-[2px] bg-white/70 p-6">
                   <span className="font-display text-[1.4rem] leading-none text-green">A</span>
                   <p className="flex-1 leading-[1.9] text-ink/85">{f.a}</p>
                 </div>
@@ -81,7 +81,7 @@ export default function FaqPage() {
             href={site.links.map}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex min-h-80 items-center justify-center overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-beige via-sand to-[#cbb89a]"
+            className="group relative flex min-h-80 items-center justify-center overflow-hidden rounded-[2px] bg-gradient-to-br from-beige via-sand to-[#cbb89a]"
             aria-label="네이버 지도에서 스파코지 위치 보기"
           >
             <div className="absolute inset-0 opacity-40 [background:repeating-linear-gradient(45deg,transparent_0_22px,#fff3_22px_23px)]" />

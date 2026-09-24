@@ -33,7 +33,7 @@ export default function ConcernsPage() {
               <a
                 key={c.slug}
                 href={`#${c.slug}`}
-                className="inline-flex min-h-11 items-center rounded-full border border-sand bg-white/60 px-5 text-[0.95rem] hover:border-green hover:text-green"
+                className="inline-flex min-h-11 items-center border border-sand bg-white/40 px-5 text-[0.95rem] hover:border-green hover:text-green"
               >
                 {c.name}
               </a>
@@ -45,11 +45,11 @@ export default function ConcernsPage() {
               <article
                 key={c.slug}
                 id={c.slug}
-                className="scroll-mt-28 rounded-[1.75rem] bg-white/75 p-8 ring-1 ring-sand/70 target:ring-2 target:ring-green md:p-10"
+                className="scroll-mt-28 border border-sand/80 bg-white/40 p-8 target:ring-2 target:ring-green md:p-10"
               >
                 <h2 className="font-serif text-[1.35rem] text-green">{c.name}</h2>
                 <p className="mt-2 text-ink/75">{c.desc}</p>
-                {c.note && <p className="mt-4 rounded-2xl bg-beige/70 p-4 text-[0.95rem] text-ink/85">{c.note}</p>}
+                {c.note && <p className="mt-4 rounded-[2px] bg-beige/70 p-4 text-[0.95rem] text-ink/85">{c.note}</p>}
                 <div className="mt-6 border-t border-sand pt-5">
                   <p className="mb-3 text-sm text-greige">추천 관리</p>
                   <ul className="space-y-2">

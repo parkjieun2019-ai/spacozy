@@ -24,7 +24,7 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-sand/60 bg-ivory/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-sand/50 bg-ivory/85 backdrop-blur-md">
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 md:h-20 md:px-8">
         <Logo />
 
@@ -44,7 +44,7 @@ export default function Header() {
             href={site.links.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-green px-5 py-2.5 text-[0.9rem] text-ivory transition-colors hover:bg-green-soft"
+            className="border border-green px-6 py-2.5 text-[0.9rem] tracking-[0.06em] text-green transition-colors duration-300 hover:bg-green hover:text-ivory"
           >
             예약하기
           </a>

@@ -56,7 +56,7 @@ export default function ProgramsPage() {
                 <p className="mb-6 text-center font-display text-[1.05rem] italic tracking-[0.12em] text-wood">Care Step</p>
                 <ol className="grid gap-4 md:grid-cols-5">
                   {p.steps.map((s, i) => (
-                    <li key={s.title} className="relative rounded-[1.5rem] bg-white/75 p-6 ring-1 ring-sand/70">
+                    <li key={s.title} className="relative border border-sand/80 bg-white/40 p-6">
                       <p className="font-display text-[1.9rem] leading-none text-wood/70">{String(i + 1).padStart(2, "0")}</p>
                       <p className="mt-4 font-serif text-[1.1rem] leading-snug text-green">{s.title}</p>
                       <p className="mt-2 text-[0.95rem] leading-[1.75] text-ink/80">{s.desc}</p>
@@ -79,7 +79,7 @@ export default function ProgramsPage() {
             <Button href="/concerns" variant="light">
               고민별 추천 보기
             </Button>
-            <Button href="/membership" variant="light" className="!bg-transparent !text-ivory ring-1 ring-ivory/50">
+            <Button href="/membership" variant="ghost-light">
               멤버십 혜택
             </Button>
           </div>

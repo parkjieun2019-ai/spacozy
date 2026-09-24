@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Noto_Serif_KR } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactBar from "@/components/ContactBar";
+import Reveal from "@/components/Reveal";
 import { site } from "@/config/site";
 import "./globals.css";
 
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <ContactBar />
+        <Reveal />
       </body>
     </html>
   );

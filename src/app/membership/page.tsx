@@ -15,14 +15,14 @@ export default function MembershipPage() {
       <section className="py-16 md:py-24">
         <Container className="grid gap-6 md:grid-cols-2">
           {/* 첫 방문 */}
-          <article className="flex flex-col rounded-[1.75rem] bg-green p-9 text-ivory md:p-12">
+          <article className="flex flex-col bg-green p-9 text-ivory md:p-12">
             <p className="font-display text-[1.05rem] italic tracking-[0.12em] text-sand">Welcome Benefit</p>
             <h2 className="mt-4 font-serif text-[1.6rem] leading-[1.5] md:text-[1.9rem]">첫 방문 웰컴 혜택</h2>
             <p className="mt-5 leading-[1.9] text-ivory/85">
               {site.director.years}년 경력 대표원장의 1:1 수기 테라피를 처음 경험하시는 분께 특별한 혜택을 드립니다.
             </p>
             {/* 첫 방문 혜택은 네이버 플레이스 공개 기준과 동일하게 유지 */}
-            <p className="mt-6 rounded-2xl bg-ivory/10 p-5 text-ivory/90">
+            <p className="mt-6 rounded-[2px] bg-ivory/10 p-5 text-ivory/90">
               혜택 내용은 네이버 예약 페이지에서 확인하실 수 있습니다.
             </p>
             <div className="mt-auto pt-10">
@@ -33,7 +33,7 @@ export default function MembershipPage() {
           </article>
 
           {/* 정액권 */}
-          <article className="flex flex-col rounded-[1.75rem] bg-white/80 p-9 ring-1 ring-sand md:p-12">
+          <article className="flex flex-col border border-sand/80 bg-white/40 p-9 md:p-12">
             <Eyebrow>Private Membership</Eyebrow>
             <h2 className="mt-4 font-serif text-[1.6rem] leading-[1.5] text-green md:text-[1.9rem]">프라이빗 정액권 멤버십</h2>
             <ul className="mt-7 space-y-5">
