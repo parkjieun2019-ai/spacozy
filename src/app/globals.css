@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #f5efe4;
+  --color-beige: #e9dfd0;
+  --color-sand: #d8c9b0;
+  --color-greige: #6f6861;
+  --color-green: #1f3d33;
+  --color-green-soft: #2e5445;
+  --color-wood: #9c7b5b;
+  --color-ink: #2a2622;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Malgun Gothic", sans-serif;
+  --font-serif: var(--font-noto-serif), "Nanum Myeongjo", serif;
+  --font-display: var(--font-cormorant), var(--font-noto-serif), serif;
+}
+
+/* 4050 가독성: 1rem = 17px */
+html {
+  font-size: 106.25%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.75;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-sand);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 3px;
+}
