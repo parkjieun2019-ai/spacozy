@@ -3,6 +3,7 @@ import { Button, Container, Eyebrow, Photo, SectionTitle, ViewMore } from "@/com
 import { programs } from "@/content/programs";
 import { concerns } from "@/content/concerns";
 import { site } from "@/config/site";
+import { images } from "@/content/images";
 
 const points = [
   {
@@ -50,7 +51,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <Photo label="메인 · 관리실 전경" tone="wood" className="aspect-[4/5] w-full md:aspect-[4/5]" />
+          <Photo label="메인 · 관리실 전경" src={images.hero} tone="wood" className="aspect-[4/5] w-full md:aspect-[4/5]" />
         </Container>
       </section>
 
@@ -95,7 +96,7 @@ export default function Home() {
       {/* 4. 대표원장 */}
       <section className="bg-green py-20 text-ivory md:py-32">
         <Container className="grid items-center gap-12 md:grid-cols-2 md:gap-20">
-          <Photo label="대표원장 김명숙" tone="green" className="aspect-[4/5] w-full max-w-md md:justify-self-end" />
+          <Photo label="대표원장 김명숙" src={images.director} tone="green" className="aspect-[4/5] w-full max-w-md md:justify-self-end" />
           <div>
             <p className="font-display text-[1.05rem] italic tracking-[0.12em] text-sand">Director</p>
             <p className="mt-6 font-display text-[4.5rem] leading-none text-ivory md:text-[6rem]">
@@ -151,7 +152,7 @@ export default function Home() {
           <div className="mt-14 grid gap-8 md:grid-cols-2">
             {programs.map((p, i) => (
               <Link key={p.slug} href={`/programs#${p.slug}`} className="group block">
-                <Photo label={p.name} tone={i === 0 ? "wood" : "sand"} className="aspect-[4/3] w-full" />
+                <Photo label={p.name} src={images.programs[p.slug]} tone={i === 0 ? "wood" : "sand"} className="aspect-[4/3] w-full" />
                 <div className="mt-6 px-1">
                   <p className="font-display text-[1.05rem] italic tracking-wider text-wood">{p.nameEn}</p>
                   <h3 className="mt-2 font-serif text-[1.4rem] text-green md:text-[1.55rem]">{p.name}</h3>
@@ -183,9 +184,9 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <Photo label="프라이빗 관리실" className="col-span-2 aspect-[16/9]" />
-              <Photo label="로비" tone="wood" className="aspect-square" />
-              <Photo label="웰컴 티" className="aspect-square" />
+              <Photo label="프라이빗 관리실" src={images.spaceRoom} className="col-span-2 aspect-[16/9]" />
+              <Photo label="로비" src={images.spaceLobby} tone="wood" className="aspect-square" />
+              <Photo label="웰컴 티" src={images.spaceTea} className="aspect-square" />
             </div>
           </div>
         </Container>

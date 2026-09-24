@@ -80,7 +80,7 @@ export function Photo({
 }) {
   if (src)
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={src} alt={alt ?? label} className={`rounded-[1.75rem] object-cover ${className}`} />;
+    return <img src={src} alt={alt ?? label} loading="lazy" className={`rounded-[1.75rem] bg-beige object-cover ${className}`} />;
   const bg = {
     sand: "from-beige via-sand to-[#cbb89a]",
     wood: "from-[#d9c6ad] via-[#b89878] to-wood",

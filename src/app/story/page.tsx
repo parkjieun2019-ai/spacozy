@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Button, Container, Eyebrow, PageHero, Photo } from "@/components/ui";
 import { site } from "@/config/site";
+import { images } from "@/content/images";
 
 export const metadata: Metadata = {
   title: "브랜드 스토리",
@@ -32,7 +33,7 @@ export default function StoryPage() {
       <section className="py-20 md:py-32">
         <Container className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-20">
           <div className="md:sticky md:top-32 md:self-start">
-            <Photo label={`대표원장 ${site.director.name}`} tone="wood" className="aspect-[4/5] w-full" />
+            <Photo label={`대표원장 ${site.director.name}`} src={images.directorStory} tone="wood" className="aspect-[4/5] w-full" />
             <p className="mt-5 text-center font-serif text-greige">
               대표원장 <span className="tracking-[0.2em] text-ink">{site.director.name}</span> · 경력 {site.director.years}년
             </p>
@@ -99,7 +100,7 @@ export default function StoryPage() {
               실장 <span className="text-ink">{site.manager.name}</span> · 경력 {site.manager.years}
             </p>
           </div>
-          <Photo label={`실장 ${site.manager.name}`} className="order-1 aspect-[4/5] w-full md:order-2" />
+          <Photo label={`실장 ${site.manager.name}`} src={images.manager} className="order-1 aspect-[4/5] w-full md:order-2" />
         </Container>
       </section>
 

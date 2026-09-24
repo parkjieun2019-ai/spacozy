@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Button, Container, Eyebrow, PageHero, Photo } from "@/components/ui";
 import { formatPrice, programs } from "@/content/programs";
 import { site } from "@/config/site";
+import { images } from "@/content/images";
 
 export const metadata: Metadata = {
   title: "시그니처 프로그램",
@@ -23,7 +24,7 @@ export default function ProgramsPage() {
           <section key={p.slug} id={p.slug} className={`scroll-mt-24 py-20 md:py-28 ${idx % 2 ? "bg-beige/50" : ""}`}>
             <Container>
               <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-                <Photo label={p.name} tone={idx % 2 ? "sand" : "wood"} className="aspect-[4/3] w-full md:aspect-[4/5]" />
+                <Photo label={p.name} src={images.programs[p.slug]} tone={idx % 2 ? "sand" : "wood"} className="aspect-[4/3] w-full md:aspect-[4/5]" />
                 <div>
                   <Eyebrow className="mb-3">
                     Signature {String(idx + 1).padStart(2, "0")} · {p.nameEn}
