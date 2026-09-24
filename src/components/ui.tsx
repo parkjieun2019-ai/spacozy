@@ -106,7 +106,7 @@ export function Photo({
   src?: string;
   alt?: string;
   className?: string;
-  tone?: "sand" | "wood" | "green";
+  tone?: "sand" | "wood" | "dark";
   shape?: "rect" | "arch";
 }) {
   const radius = shape === "arch" ? "rounded-t-[999px] rounded-b-[18px]" : "rounded-[18px]";
@@ -125,11 +125,11 @@ export function Photo({
   const bg = {
     sand: "from-mist via-line to-[#cfc5bd]",
     wood: "from-[#d8ccc3] via-[#b3a196] to-accent",
-    green: "from-[#5a4d48] via-primary-soft to-primary",
+    dark: "from-[#5a4d48] via-primary-soft to-primary",
   }[tone];
   return (
     <div role="img" aria-label={`${label} (사진 준비 중)`} className={`relative overflow-hidden bg-gradient-to-br ${bg} ${radius} ${className}`}>
-      <span className={`absolute bottom-4 left-5 text-[0.8rem] tracking-wider ${tone === "green" ? "text-paper/70" : "text-ink/45"}`}>
+      <span className={`absolute bottom-4 left-5 text-[0.8rem] tracking-wider ${tone === "dark" ? "text-paper/70" : "text-ink/45"}`}>
         {label} · 사진 준비 중
       </span>
     </div>
