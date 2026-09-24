@@ -1,12 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useRef, useState } from "react";
 import { concerns } from "@/content/concerns";
-import { programs } from "@/content/programs";
+import { findMenuItem, won } from "@/content/menu";
 import { images } from "@/content/images";
-
-const bySlug = Object.fromEntries(programs.map((p) => [p.slug, p]));
 
 function StepLabel({ no, children }: { no: number; children: React.ReactNode }) {
   return (
@@ -17,7 +14,7 @@ function StepLabel({ no, children }: { no: number; children: React.ReactNode }) 
   );
 }
 
-/** 1단계 고민 선택 → 2단계 추천 관리 (한눈에 보이는 선택형) */
+/** 1단계 고민 선택 → 2단계 실제 세부 프로그램 추천 (이름·시간·가격까지 바로 표시) */
 export default function ConcernTabs() {
   const [active, setActive] = useState(concerns[0].slug);
   const current = concerns.find((c) => c.slug === active) ?? concerns[0];
@@ -25,7 +22,6 @@ export default function ConcernTabs() {
 
   const pick = (slug: string) => {
     setActive(slug);
-    // 휴대폰에서는 결과가 화면 아래에 있으면 살짝 보이도록 이동
     const el = resultRef.current;
     if (el && window.innerWidth < 768) {
       const top = el.getBoundingClientRect().top;
@@ -76,28 +72,48 @@ export default function ConcernTabs() {
         {current.note && <p className="mt-2 text-[0.95rem] text-muted">{current.note}</p>}
 
         <div className="mt-5 grid gap-3 md:grid-cols-2 md:gap-4">
-          {current.programs.map((slug, i) => {
-            const p = bySlug[slug];
-            if (!p) return null;
+          {current.recommend.map((name, i) => {
+            const found = findMenuItem(name);
+            if (!found) return null;
+            const { item, categoryName } = found;
             return (
-              <Link
-                key={`${current.slug}-${slug}`}
-                href={`/programs#${slug}`}
-                className="fade-up group flex overflow-hidden rounded-[14px] border border-line bg-mist/40 transition-shadow duration-300 hover:shadow-lg hover:shadow-ink/5"
+              <div
+                key={`${current.slug}-${name}`}
+                className="fade-up flex overflow-hidden rounded-[14px] border border-line bg-mist/40"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={images.programs[slug]} alt="" className="tone-photo w-28 shrink-0 object-cover md:w-36" />
+                {images.programs[current.signature] && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={images.programs[current.signature]} alt="" className="tone-photo w-24 shrink-0 object-cover md:w-32" />
+                )}
                 <div className="flex flex-1 flex-col justify-center p-4 md:p-5">
-                  <span className={`mb-2 w-fit rounded-full px-2.5 py-0.5 text-[0.78rem] font-semibold ${i === 0 ? "bg-primary text-paper" : "bg-line/60 text-ink/70"}`}>
-                    {i === 0 ? "가장 추천" : "함께 추천"}
-                  </span>
-                  <p className="font-serif text-[1.1rem] font-semibold leading-snug text-ink">{p.name}</p>
-                  <p className="mt-1.5 text-[0.9rem] leading-[1.6] text-muted">{p.summary}</p>
-                  <p className="mt-2 text-[0.88rem] font-semibold text-primary">자세히 보기 →</p>
+                  <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
+                    <span className={`w-fit rounded-full px-2.5 py-0.5 text-[0.78rem] font-semibold ${i === 0 ? "bg-primary text-paper" : "bg-line/60 text-ink/70"}`}>
+                      {i === 0 ? "가장 추천" : "함께 추천"}
+                    </span>
+                    <span className="text-[0.78rem] text-muted">{categoryName}</span>
+                  </div>
+                  <p className="font-serif text-[1.05rem] font-semibold leading-snug text-ink">{item.name}</p>
+                  {item.desc && <p className="mt-1 text-[0.88rem] leading-[1.55] text-muted">{item.desc}</p>}
+                  <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.85rem]">
+                    {item.duration && <span className="text-muted">{item.duration}</span>}
+                    {item.price != null ? (
+                      <span className="font-semibold text-primary">
+                        {item.firstPrice ? `첫 방문 ${won(item.firstPrice)}` : won(item.price)}
+                      </span>
+                    ) : (
+                      <span className="font-semibold text-muted">{item.priceNote ?? "상담 안내"}</span>
+                    )}
+                  </div>
                 </div>
-              </Link>
+              </div>
             );
           })}
+        </div>
+
+        <div className="mt-5 text-right">
+          <a href={`/programs#${current.signature}-price`} className="text-[0.9rem] font-semibold text-primary hover:underline">
+            전체 프로그램 · 가격 더 보기 →
+          </a>
         </div>
       </div>
     </div>

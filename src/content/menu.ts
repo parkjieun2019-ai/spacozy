@@ -100,3 +100,12 @@ export function priceRange(signature: string) {
 
 /** 시그니처에 속한 카테고리 id 목록 */
 export const categoriesOf = (signature: string) => menu.filter((c) => c.signature === signature).map((c) => c.id);
+
+/** 이름으로 세부 프로그램 하나를 찾습니다 (고민별 추천 등에서 사용). */
+export function findMenuItem(name: string) {
+  for (const cat of menu) {
+    const item = cat.items.find((i) => i.name === name);
+    if (item) return { item, categoryId: cat.id, categoryName: cat.name, signature: cat.signature };
+  }
+  return undefined;
+}
