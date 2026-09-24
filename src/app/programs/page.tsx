@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Button, Container, Eyebrow, PageHero, Photo } from "@/components/ui";
+import { Button, Container, Eyebrow, PageHero, Photo, SectionTitle } from "@/components/ui";
+import PriceMenu from "@/components/PriceMenu";
 import { formatPrice, programs } from "@/content/programs";
 import { site } from "@/config/site";
 import { images } from "@/content/images";
@@ -67,6 +68,18 @@ export default function ProgramsPage() {
             </Container>
           </section>
         ))}
+
+      {/* 전체 프로그램 · 가격표 (카테고리별) */}
+      <section id="price" className="scroll-mt-24 border-t border-line bg-mist py-20 md:py-28">
+        <Container>
+          <SectionTitle en="Price List" sub="카테고리를 누르면 세부 프로그램과 가격을 볼 수 있어요.">
+            전체 프로그램 · 가격표
+          </SectionTitle>
+          <div className="mt-10 md:mt-14">
+            <PriceMenu />
+          </div>
+        </Container>
+      </section>
 
       <section className="bg-primary py-16 text-center text-paper md:py-20">
         <Container>
