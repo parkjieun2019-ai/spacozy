@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ivory: #f6f2eb;
-  --color-beige: #ece4d8;
-  --color-sand: #d9ccb8;
-  --color-greige: #7a726a;
-  --color-green: #22382f;
-  --color-green-soft: #34503f;
-  --color-wood: #a08466;
-  --color-ink: #2b2723;
+  --color-paper: #ffffff;
+  --color-mist: #f5f2ef;
+  --color-line: #e4ddd8;
+  --color-muted: #79706c;
+  --color-primary: #2a2423;
+  --color-primary-soft: #403634;
+  --color-accent: #8c7b72;
+  --color-ink: #26211f;
 
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Malgun Gothic", sans-serif;
   --font-serif: var(--font-noto-serif), "Nanum Myeongjo", serif;
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  background: var(--color-ivory);
+  background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-weight: 350;
@@ -40,11 +40,11 @@ h3 {
 }
 
 ::selection {
-  background: var(--color-sand);
+  background: var(--color-line);
 }
 
 :focus-visible {
-  outline: 1px solid var(--color-green);
+  outline: 1px solid var(--color-primary);
   outline-offset: 4px;
 }
 
@@ -99,4 +99,9 @@ h3 {
   .fade-up {
     animation: none;
   }
+}
+
+/* 셀파크 톤: 사진을 살짝 따뜻하고 차분하게 통일 */
+.tone-photo {
+  filter: sepia(0.22) saturate(0.78) contrast(1.02);
 }

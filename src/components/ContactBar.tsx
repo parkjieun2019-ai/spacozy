@@ -31,26 +31,26 @@ function CalendarIcon({ className = "" }: { className?: string }) {
 export default function ContactBar() {
   return (
     <>
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-sand bg-ivory/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-paper/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden">
         <div className="grid grid-cols-3">
           <a href={site.links.tel} className="flex flex-col items-center gap-1 py-3 text-[0.85rem] text-ink">
-            <PhoneIcon className="h-6 w-6 text-green" />
+            <PhoneIcon className="h-6 w-6 text-primary" />
             전화
           </a>
           <a
             href={kakao || site.links.tel}
             target={kakao ? "_blank" : undefined}
             rel="noopener noreferrer"
-            className="flex flex-col items-center gap-1 border-x border-sand py-3 text-[0.85rem] text-ink"
+            className="flex flex-col items-center gap-1 border-x border-line py-3 text-[0.85rem] text-ink"
           >
-            <KakaoIcon className="h-6 w-6 text-[#3c1e1e]" />
+            <KakaoIcon className="h-6 w-6 text-primary" />
             카톡 상담
           </a>
           <a
             href={site.links.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center gap-1 bg-green py-3 text-[0.85rem] font-medium text-ivory"
+            className="flex flex-col items-center gap-1 bg-primary py-3 text-[0.85rem] font-medium text-paper"
           >
             <CalendarIcon className="h-6 w-6" />
             네이버 예약
@@ -65,7 +65,7 @@ export default function ContactBar() {
           rel="noopener noreferrer"
           aria-label="네이버 예약"
           title="네이버 예약"
-          className="flex h-15 w-15 items-center justify-center rounded-full bg-green text-ivory shadow-lg shadow-ink/20 ring-2 ring-ivory/70 transition-transform hover:-translate-y-0.5"
+          className="flex h-15 w-15 items-center justify-center rounded-full bg-primary text-paper shadow-lg shadow-ink/20 ring-1 ring-paper/40 transition-transform hover:-translate-y-0.5"
         >
           <CalendarIcon className="h-6 w-6" />
         </a>
@@ -76,7 +76,7 @@ export default function ContactBar() {
             rel="noopener noreferrer"
             aria-label="카카오톡 상담"
             title="카카오톡 상담"
-            className="flex h-15 w-15 items-center justify-center rounded-full bg-[#fee500] text-[#3c1e1e] shadow-lg shadow-ink/10 transition-transform hover:-translate-y-0.5"
+            className="flex h-15 w-15 items-center justify-center rounded-full bg-primary text-paper shadow-lg shadow-ink/20 ring-1 ring-paper/40 transition-transform hover:-translate-y-0.5"
           >
             <KakaoIcon className="h-7 w-7" />
           </a>
@@ -85,7 +85,7 @@ export default function ContactBar() {
           href={site.links.tel}
           aria-label={`전화 ${site.phone}`}
           title={site.phone}
-          className="flex h-15 w-15 items-center justify-center rounded-full bg-ivory text-green shadow-lg shadow-ink/10 ring-1 ring-sand transition-transform hover:-translate-y-0.5"
+          className="flex h-15 w-15 items-center justify-center rounded-full bg-primary text-paper shadow-lg shadow-ink/20 ring-1 ring-paper/40 transition-transform hover:-translate-y-0.5"
         >
           <PhoneIcon className="h-6 w-6" />
         </a>

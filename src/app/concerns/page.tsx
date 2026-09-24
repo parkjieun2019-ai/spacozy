@@ -33,7 +33,7 @@ export default function ConcernsPage() {
               <a
                 key={c.slug}
                 href={`#${c.slug}`}
-                className="inline-flex min-h-11 items-center border border-sand bg-white/40 px-5 text-[0.95rem] hover:border-green hover:text-green"
+                className="inline-flex min-h-11 items-center border border-line bg-white/40 px-5 text-[0.95rem] hover:border-primary hover:text-primary"
               >
                 {c.name}
               </a>
@@ -45,13 +45,13 @@ export default function ConcernsPage() {
               <article
                 key={c.slug}
                 id={c.slug}
-                className="scroll-mt-28 border border-sand/80 bg-white/40 p-8 target:ring-2 target:ring-green md:p-10"
+                className="scroll-mt-28 border border-line/80 bg-white/40 p-8 target:ring-2 target:ring-primary md:p-10"
               >
-                <h2 className="font-serif text-[1.35rem] text-green">{c.name}</h2>
+                <h2 className="font-serif text-[1.35rem] text-primary">{c.name}</h2>
                 <p className="mt-2 text-ink/75">{c.desc}</p>
-                {c.note && <p className="mt-4 rounded-[2px] bg-beige/70 p-4 text-[0.95rem] text-ink/85">{c.note}</p>}
-                <div className="mt-6 border-t border-sand pt-5">
-                  <p className="mb-3 text-sm text-greige">추천 관리</p>
+                {c.note && <p className="mt-4 rounded-[2px] bg-mist/70 p-4 text-[0.95rem] text-ink/85">{c.note}</p>}
+                <div className="mt-6 border-t border-line pt-5">
+                  <p className="mb-3 text-sm text-muted">추천 관리</p>
                   <ul className="space-y-2">
                     {c.programs.map((slug, i) => {
                       const p = bySlug[slug];
@@ -59,11 +59,11 @@ export default function ConcernsPage() {
                       return (
                         <li key={slug}>
                           <Link href={`/programs#${slug}`} className="group flex items-center justify-between gap-4">
-                            <span className="font-serif text-[1.08rem] text-ink group-hover:text-green">
-                              {i === 0 && <span className="mr-2 text-[0.8rem] text-wood">BEST</span>}
+                            <span className="font-serif text-[1.08rem] text-ink group-hover:text-primary">
+                              {i === 0 && <span className="mr-2 text-[0.8rem] text-accent">BEST</span>}
                               {p.name}
                             </span>
-                            <span className="h-px w-8 shrink-0 bg-green/60 transition-all group-hover:w-12" />
+                            <span className="h-px w-8 shrink-0 bg-primary/60 transition-all group-hover:w-12" />
                           </Link>
                         </li>
                       );
@@ -75,7 +75,7 @@ export default function ConcernsPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="mb-6 text-greige">내 고민이 목록에 없어도 괜찮아요. 편하게 물어보세요.</p>
+            <p className="mb-6 text-muted">내 고민이 목록에 없어도 괜찮아요. 편하게 물어보세요.</p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
               <Button href={site.links.booking}>상담 예약하기</Button>
               <Button href={site.links.tel} variant="outline">

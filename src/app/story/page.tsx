@@ -34,13 +34,13 @@ export default function StoryPage() {
         <Container className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-20">
           <div className="md:sticky md:top-32 md:self-start">
             <Photo label={`대표원장 ${site.director.name}`} src={images.directorStory} tone="wood" className="aspect-[4/5] w-full" />
-            <p className="mt-5 text-center font-serif text-greige">
+            <p className="mt-5 text-center font-serif text-muted">
               대표원장 <span className="tracking-[0.2em] text-ink">{site.director.name}</span> · 경력 {site.director.years}년
             </p>
           </div>
           <div>
             <Eyebrow className="mb-5">Director&apos;s Philosophy</Eyebrow>
-            <h2 className="font-serif text-[1.55rem] leading-[1.7] text-green md:text-[2rem]">
+            <h2 className="font-serif text-[1.55rem] leading-[1.7] text-primary md:text-[2rem]">
               “무거웠던 당신의 어깨가 가벼워지는 순간,
               <br className="hidden md:block" /> 얼굴의 선도 함께 살아납니다.”
             </h2>
@@ -56,19 +56,19 @@ export default function StoryPage() {
               <p>억지로 누르거나 당기지 않고, 몸이 스스로 편안함을 되찾을 수 있도록 곁에서 돕겠습니다.</p>
             </div>
             <div className="mt-12 text-right">
-              <p className="text-greige">대표원장</p>
+              <p className="text-muted">대표원장</p>
               {/* TODO: 자필 서명 이미지로 교체 (public/images/signature.png) */}
-              <p className="mt-1 font-serif text-[2rem] italic tracking-[0.3em] text-green">{site.director.name}</p>
-              <p className="text-greige">올림</p>
+              <p className="mt-1 font-serif text-[2rem] italic tracking-[0.3em] text-primary">{site.director.name}</p>
+              <p className="text-muted">올림</p>
             </div>
 
-            <div className="mt-16 border-t border-sand pt-12">
+            <div className="mt-16 border-t border-line pt-12">
               <Eyebrow className="mb-8">History</Eyebrow>
-              <ol className="relative space-y-10 border-l border-wood/40 pl-8">
+              <ol className="relative space-y-10 border-l border-accent/40 pl-8">
                 {timeline.map((t) => (
                   <li key={t.text} className="relative">
-                    <span className="absolute -left-[37px] top-3 h-2.5 w-2.5 rounded-full bg-wood" />
-                    <p className="font-display text-[2rem] leading-none text-green">{t.year}</p>
+                    <span className="absolute -left-[37px] top-3 h-2.5 w-2.5 rounded-full bg-accent" />
+                    <p className="font-display text-[2rem] leading-none text-primary">{t.year}</p>
                     <p className="mt-3 text-ink/80">{t.text}</p>
                   </li>
                 ))}
@@ -79,11 +79,11 @@ export default function StoryPage() {
       </section>
 
       {/* 실장 큐레이팅 */}
-      <section className="bg-beige/50 py-20 md:py-32">
+      <section className="bg-mist/50 py-20 md:py-32">
         <Container className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr] md:gap-20">
           <div className="order-2 md:order-1">
             <Eyebrow className="mb-5">Beauty Curating</Eyebrow>
-            <h2 className="font-serif text-[1.5rem] leading-[1.7] text-green md:text-[1.9rem]">
+            <h2 className="font-serif text-[1.5rem] leading-[1.7] text-primary md:text-[1.9rem]">
               “문턱을 넘는 순간부터 시작되는 편안함,
               <br className="hidden md:block" /> 고객님의 진정한 쉼을 돕겠습니다.”
             </h2>
@@ -96,7 +96,7 @@ export default function StoryPage() {
                 들러도 마음 편안한 친정집 같은 안식처가 되도록 정성을 다해 모시겠습니다.
               </p>
             </div>
-            <p className="mt-10 font-serif text-greige">
+            <p className="mt-10 font-serif text-muted">
               실장 <span className="text-ink">{site.manager.name}</span> · 경력 {site.manager.years}
             </p>
           </div>
@@ -108,16 +108,16 @@ export default function StoryPage() {
       <section className="py-20 md:py-28">
         <Container className="text-center">
           <Eyebrow className="mb-4">Your First Visit</Eyebrow>
-          <h2 className="font-serif text-[1.5rem] text-green md:text-[1.9rem]">첫 방문은 이렇게 진행됩니다</h2>
+          <h2 className="font-serif text-[1.5rem] text-primary md:text-[1.9rem]">첫 방문은 이렇게 진행됩니다</h2>
           <ol className="mx-auto mt-12 grid max-w-4xl gap-4 text-left md:grid-cols-3">
             {[
               ["웰컴 차트", "컨디션, 수면 상태, 고민 부위를 함께 살펴봅니다."],
               ["맞춤 큐레이션", "대표원장 또는 실장이 그날에 맞는 관리를 제안합니다."],
               ["관리 후 안내", "홈케어 팁과 다음 관리 시기를 알려 드립니다."],
             ].map(([t, d], i) => (
-              <li key={t} className="border border-sand/80 bg-white/40 p-8">
-                <p className="font-display text-[2rem] leading-none text-wood/70">0{i + 1}</p>
-                <p className="mt-4 font-serif text-[1.2rem] text-green">{t}</p>
+              <li key={t} className="border border-line/80 bg-white/40 p-8">
+                <p className="font-display text-[2rem] leading-none text-accent/70">0{i + 1}</p>
+                <p className="mt-4 font-serif text-[1.2rem] text-primary">{t}</p>
                 <p className="mt-2 text-ink/80">{d}</p>
               </li>
             ))}
