@@ -6,8 +6,8 @@ export default function Footer() {
     <footer className="bg-[#003c26] pb-28 text-paper/80 lg:pb-0">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr_1fr] md:px-8">
         <div>
-          <p className="font-display text-[1.8rem] tracking-[0.18em] text-paper">SPA COZY</p>
-          <p className="mt-1 font-serif text-sm tracking-[0.4em] text-paper/60">스파코지</p>
+          <p className="font-display text-[1.8rem] tracking-[0.28em] text-paper">SPA COZY</p>
+          <p className="mt-2 text-[0.7rem] tracking-[0.42em] text-paper/55">SINCE 2006 · 스파코지</p>
           <p className="mt-6 leading-relaxed">
             어깨가 가벼워지는 순간,
             <br />
@@ -45,6 +45,12 @@ export default function Footer() {
             ))}
           </ul>
         </div>
+      </div>
+
+      <div className="overflow-hidden px-5 md:px-8" aria-hidden>
+        <p className="mx-auto max-w-7xl select-none text-center font-display text-[17vw] leading-[0.85] tracking-[0.04em] text-paper/[0.07] md:text-[13.5vw]">
+          SPA COZY
+        </p>
       </div>
 
       <div className="border-t border-paper/15">

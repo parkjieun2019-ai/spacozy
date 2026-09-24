@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function Reveal() {
   useEffect(() => {
     const observe = () => {
-      const els = document.querySelectorAll<HTMLElement>(".reveal:not(.is-visible)");
+      const els = document.querySelectorAll<HTMLElement>(".reveal:not(.is-visible), .unveil:not(.is-visible)");
       if (!("IntersectionObserver" in window)) {
         els.forEach((el) => el.classList.add("is-visible"));
         return () => {};

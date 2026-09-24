@@ -34,14 +34,14 @@ export default function Home() {
       {/* 1. 메인 — 셀파크 스타일: 흰 바탕 큰 영문 제목 + 아래 큰 사진 */}
       <section className="pt-14 md:pt-24">
         <Container>
-          <p className="fade-up font-display text-[3.1rem] leading-[1.02] tracking-[-0.015em] text-ink md:text-[6rem]">
+          <p className="fade-up font-display text-[2.35rem] leading-[1.08] tracking-[-0.01em] text-ink sm:text-[3.4rem] md:text-[5.4rem]">
             SPA COZY,
             <br />
-            The Quiet Hands
+            <span className="italic text-primary">The Quiet Hands</span>
           </p>
           <div className="mt-8 grid gap-8 md:mt-12 md:grid-cols-[1fr_auto] md:items-end">
             <div>
-              <h1 className="fade-up font-serif text-[1.3rem] leading-[1.7] text-ink [animation-delay:.15s] md:text-[1.6rem]">
+              <h1 className="fade-up font-serif text-[1.35rem] leading-[1.75] text-ink [animation-delay:.15s] md:text-[1.75rem]">
                 무거웠던 당신의 어깨가 가벼워지는 순간,
                 <br />
                 얼굴의 선(線)도 함께 살아납니다.

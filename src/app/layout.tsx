@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Noto_Serif_KR } from "next/font/google";
+import { Bodoni_Moda } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactBar from "@/components/ContactBar";
@@ -7,19 +7,12 @@ import Reveal from "@/components/Reveal";
 import { site } from "@/config/site";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500"],
   style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  variable: "--font-bodoni",
   display: "swap",
-});
-
-const notoSerif = Noto_Serif_KR({
-  weight: ["400", "500", "600"],
-  variable: "--font-noto-serif",
-  display: "swap",
-  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -64,7 +57,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={`${cormorant.variable} ${notoSerif.variable}`}>
+    <html lang="ko" className={bodoni.variable}>
       <head>
         <link
           rel="stylesheet"

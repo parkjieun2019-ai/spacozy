@@ -7,9 +7,26 @@ import { nav, site } from "@/config/site";
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
-    <Link href="/" className={`inline-flex flex-col leading-none text-primary ${className}`} aria-label="스파코지 홈">
-      <span className="font-display text-[1.6rem] tracking-[0.18em]">SPA COZY</span>
-      <span className="mt-1 font-serif text-[0.7rem] tracking-[0.5em] text-muted">스파코지</span>
+    <Link href="/" className={`inline-flex flex-col items-center leading-none text-primary ${className}`} aria-label="스파코지 홈">
+      <span className="font-display text-[1.55rem] tracking-[0.28em] md:text-[1.75rem]">SPA COZY</span>
+      <span className="mt-1.5 flex items-center gap-2 text-[0.62rem] tracking-[0.42em] text-muted">
+        <span className="h-px w-4 bg-line" />
+        SINCE 2006
+        <span className="h-px w-4 bg-line" />
+      </span>
+    </Link>
+  );
+}
+
+function NavLink({ href, label, active }: { href: string; label: string; active: boolean }) {
+  return (
+    <Link
+      href={href}
+      className={`relative py-2 text-[0.95rem] tracking-[0.02em] transition-colors hover:text-primary after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:bg-primary after:transition-transform after:duration-500 ${
+        active ? "text-primary after:scale-x-100" : "text-ink/75 after:scale-x-0 hover:after:scale-x-100"
+      }`}
+    >
+      {label}
     </Link>
   );
 }
@@ -24,27 +41,25 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/50 bg-paper/85 backdrop-blur-md">
-      <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 md:h-20 md:px-8">
-        <Logo />
-
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="주 메뉴">
-          {nav.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className={`text-[0.95rem] transition-colors hover:text-primary ${
-                pathname === n.href ? "text-primary font-semibold" : "text-ink/80"
-              }`}
-            >
-              {n.label}
-            </Link>
+    <header className="sticky top-0 z-40 border-b border-line/60 bg-paper/90 backdrop-blur-md">
+      <div className="mx-auto grid h-18 max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-5 md:h-22 md:px-10">
+        <nav className="hidden items-center gap-6 lg:flex xl:gap-9" aria-label="주 메뉴">
+          {nav.slice(0, 3).map((n) => (
+            <NavLink key={n.href} href={n.href} label={n.label} active={pathname === n.href} />
+          ))}
+        </nav>
+        <div className="col-start-1 lg:col-start-2">
+          <Logo className="!items-start lg:!items-center" />
+        </div>
+        <nav className="hidden items-center justify-end gap-6 lg:flex xl:gap-9" aria-label="보조 메뉴">
+          {nav.slice(3).map((n) => (
+            <NavLink key={n.href} href={n.href} label={n.label} active={pathname === n.href} />
           ))}
           <a
             href={site.links.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-primary px-6 py-2.5 text-[0.9rem] tracking-[0.06em] text-primary transition-colors duration-300 hover:bg-primary hover:text-paper"
+            className="border border-primary px-6 py-2.5 text-[0.9rem] tracking-[0.08em] text-primary transition-colors duration-500 hover:bg-primary hover:text-paper"
           >
             예약하기
           </a>
@@ -52,7 +67,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="flex h-12 w-12 items-center justify-center lg:hidden"
+          className="col-start-3 flex h-12 w-12 items-center justify-center justify-self-end lg:hidden"
           aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}

@@ -32,7 +32,7 @@ export function SectionTitle({
   return (
     <div className={`reveal ${center ? "text-center" : ""}`}>
       {en && (
-        <p className={`font-display text-[2.5rem] leading-[1.05] tracking-[-0.01em] md:text-[3.6rem] ${light ? "text-paper" : "text-primary"}`}>
+        <p className={`font-display text-[2.1rem] leading-[1.1] tracking-[-0.005em] md:text-[3.2rem] ${light ? "text-paper" : "text-primary"}`}>
           {en}
         </p>
       )}
@@ -112,13 +112,13 @@ export function Photo({
   const radius = shape === "arch" ? "rounded-t-[999px] rounded-b-[18px]" : "rounded-[18px]";
   if (src)
     return (
-      <div className={`overflow-hidden bg-mist ${radius} ${className}`}>
+      <div className={`unveil overflow-hidden bg-mist ${radius} ${className}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={src}
           alt={alt ?? label}
           loading="lazy"
-          className="tone-photo h-full w-full object-cover transition-transform duration-[1.6s] ease-out hover:scale-[1.03]"
+          className="tone-photo h-full w-full object-cover"
         />
       </div>
     );
@@ -140,7 +140,7 @@ export function PageHero({ en, title, desc }: { en: string; title: ReactNode; de
   return (
     <section className="border-b border-line/70">
       <Container className="pb-16 pt-20 text-center md:pb-24 md:pt-28">
-        <p className="fade-up font-display text-[3rem] leading-none text-primary md:text-[5rem]">{en}</p>
+        <p className="fade-up font-display text-[2.4rem] leading-[1.05] text-primary md:text-[4.4rem]">{en}</p>
         <h1 className="fade-up mt-6 font-serif text-[1.45rem] font-semibold leading-[1.6] text-ink [animation-delay:.15s] md:text-[1.9rem]">
           {title}
         </h1>
