@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f7f2ea;
-  --color-mist: #efe6da;
-  --color-line: #e2d6c6;
-  --color-muted: #7c6e64;
-  --color-primary: #6b5244;
-  --color-primary-soft: #7e6354;
-  --color-accent: #b08d74;
-  --color-ink: #3a2f2a;
+  --color-paper: #ffffff;
+  --color-mist: #f4f6f4;
+  --color-line: #e1e6e2;
+  --color-muted: #666b68;
+  --color-primary: #16523c;
+  --color-primary-soft: #1f6a4e;
+  --color-accent: #4f8a6c;
+  --color-ink: #1a1a1a;
 
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Malgun Gothic", sans-serif;
   --font-serif: var(--font-noto-serif), "Nanum Myeongjo", serif;
@@ -35,7 +35,7 @@ body {
 h1,
 h2,
 h3 {
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -101,7 +101,19 @@ h3 {
   }
 }
 
-/* 웜 린넨 톤: 사진을 밝고 따뜻하게 통일 */
+/* 일루미엘 톤: 사진을 맑고 깨끗하게 */
 .tone-photo {
-  filter: sepia(0.1) saturate(0.9) brightness(1.04);
+  filter: saturate(0.95) brightness(1.02);
+}
+
+/* 흐르는 글자 띠 */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
 }

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Button, Container, Eyebrow, Photo, SectionTitle, ViewMore } from "@/components/ui";
 import { programs } from "@/content/programs";
-import { concerns } from "@/content/concerns";
+import ConcernTabs from "@/components/ConcernTabs";
+import Marquee from "@/components/Marquee";
+import ReviewCards from "@/components/ReviewCards";
 import { site } from "@/config/site";
 import { images } from "@/content/images";
 
@@ -145,7 +147,7 @@ export default function Home() {
                 loading="lazy"
                 className="tone-photo absolute inset-0 h-full w-full object-cover transition-transform duration-[1.8s] ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-[#3a2a22]/35 transition-colors duration-500 group-hover:bg-[#3a2a22]/50" />
+              <div className="absolute inset-0 bg-black/35 transition-colors duration-500 group-hover:bg-[#003c26]/55" />
               <div className="relative flex h-full flex-col items-center justify-center px-6 text-center text-paper">
                 <p className="font-display text-[1.6rem] uppercase tracking-[0.12em] md:text-[2rem]">{p.nameEn.replace(" Therapy", "")}</p>
                 <p className="mt-4 font-serif text-[1.2rem] leading-[1.6] md:text-[1.35rem]">{p.name}</p>
@@ -161,26 +163,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. 고민별 */}
-      <section className="bg-mist/60 py-24 md:py-36">
-        <Container className="max-w-4xl">
-          <SectionTitle en="Your Concern" sub="가장 신경 쓰이는 고민을 눌러 보세요. 맞는 관리를 안내해 드립니다.">
+      {/* 6. 고민별 — 탭을 누르면 추천이 바뀜 */}
+      <section className="bg-mist py-24 md:py-36">
+        <Container>
+          <SectionTitle en="Your Concern" sub="가장 신경 쓰이는 고민을 눌러 보세요. 맞는 관리를 바로 추천해 드립니다.">
             오늘, 어디가 가장 무거우신가요?
           </SectionTitle>
-          <ul className="reveal mt-14 grid grid-cols-2 border-t border-line md:grid-cols-5">
-            {concerns.map((c) => (
-              <li key={c.slug} className="border-b border-line odd:border-r md:border-r md:[&:nth-child(5n)]:border-r-0">
-                <Link
-                  href={`/concerns#${c.slug}`}
-                  className="flex min-h-18 items-center justify-center px-3 py-5 text-center font-serif text-[1rem] text-ink transition-colors duration-300 hover:bg-primary hover:text-paper"
-                >
-                  {c.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="reveal mt-12">
+            <ConcernTabs />
+          </div>
         </Container>
       </section>
+
+      <Marquee dark />
 
       {/* 7. 공간 */}
       <section className="py-24 md:py-36">
@@ -211,28 +206,28 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 8. 방문 안내 */}
-      <section className="border-t border-line/70">
-        <Container className="grid md:grid-cols-2">
-          <div className="reveal border-b border-line/70 py-16 md:border-b-0 md:border-r md:py-24 md:pr-16">
-            <Eyebrow>Review</Eyebrow>
-            <h3 className="mt-6 font-serif text-[1.45rem] text-primary md:text-[1.6rem]">다녀가신 분들의 이야기</h3>
-            <p className="mt-4 leading-[1.9] text-ink/75">스파코지를 경험하신 고객님들의 솔직한 후기를 네이버에서 확인해 보세요.</p>
-            <div className="mt-10">
-              <Button href={site.links.reviews} variant="outline">
-                네이버 후기 보기
-              </Button>
-            </div>
+      {/* 8. 후기 카드 */}
+      <section className="border-t border-line py-24 md:py-32">
+        <Container>
+          <SectionTitle en="Best Review">다녀가신 분들의 솔직한 이야기</SectionTitle>
+          <div className="reveal mt-12">
+            <ReviewCards />
           </div>
-          <div className="reveal py-16 md:py-24 md:pl-16">
-            <Eyebrow>Visit</Eyebrow>
+        </Container>
+      </section>
+
+      {/* 9. 오시는 길 */}
+      <section className="border-t border-line bg-mist">
+        <Container className="max-w-3xl text-center">
+          <div className="reveal py-16 md:py-24">
+            <Eyebrow className="justify-center">Visit</Eyebrow>
             <h3 className="mt-6 font-serif text-[1.45rem] text-primary md:text-[1.6rem]">오시는 길</h3>
             <p className="mt-4 leading-[1.9] text-ink/80">
               죽전로 20 {site.addressShort}
               <br />
               <span className="text-muted">죽전 · 수지 · 성복동에서 가까운 곳</span>
             </p>
-            <dl className="mt-6 space-y-1">
+            <dl className="mx-auto mt-6 w-fit space-y-1 text-left">
               {site.hours.map((h) => (
                 <div key={h.day} className="flex gap-6">
                   <dt className="w-20 text-muted">{h.day}</dt>
@@ -240,7 +235,7 @@ export default function Home() {
                 </div>
               ))}
             </dl>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
               <Button href="/faq#location">자세히 보기</Button>
               <Button href={site.links.tel} variant="outline">
                 {site.phone}

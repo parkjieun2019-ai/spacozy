@@ -36,7 +36,7 @@ export function SectionTitle({
           {en}
         </p>
       )}
-      <h2 className={`mt-4 font-serif text-[1.2rem] leading-[1.7] md:text-[1.4rem] ${light ? "text-paper/85" : "text-ink/80"}`}>{children}</h2>
+      <h2 className={`mt-4 font-serif text-[1.35rem] font-semibold leading-[1.6] md:text-[1.75rem] ${light ? "text-paper/85" : "text-ink/80"}`}>{children}</h2>
       {sub && <p className={`mt-4 ${light ? "text-paper/65" : "text-muted"}`}>{sub}</p>}
     </div>
   );
@@ -123,9 +123,9 @@ export function Photo({
       </div>
     );
   const bg = {
-    sand: "from-mist via-line to-[#cfc5bd]",
-    wood: "from-[#d8ccc3] via-[#b3a196] to-accent",
-    dark: "from-[#5a4d48] via-primary-soft to-primary",
+    sand: "from-mist via-line to-[#c9d3cc]",
+    wood: "from-[#d5e0d8] via-[#9fb8a8] to-accent",
+    dark: "from-[#2f6b53] via-primary-soft to-primary",
   }[tone];
   return (
     <div role="img" aria-label={`${label} (사진 준비 중)`} className={`relative overflow-hidden bg-gradient-to-br ${bg} ${radius} ${className}`}>
@@ -141,7 +141,7 @@ export function PageHero({ en, title, desc }: { en: string; title: ReactNode; de
     <section className="border-b border-line/70">
       <Container className="pb-16 pt-20 text-center md:pb-24 md:pt-28">
         <p className="fade-up font-display text-[3rem] leading-none text-primary md:text-[5rem]">{en}</p>
-        <h1 className="fade-up mt-6 font-serif text-[1.35rem] leading-[1.7] text-ink/85 [animation-delay:.15s] md:text-[1.7rem]">
+        <h1 className="fade-up mt-6 font-serif text-[1.45rem] font-semibold leading-[1.6] text-ink [animation-delay:.15s] md:text-[1.9rem]">
           {title}
         </h1>
         {desc && <p className="fade-up mx-auto mt-6 max-w-2xl text-muted [animation-delay:.3s]">{desc}</p>}
