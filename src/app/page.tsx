@@ -3,6 +3,7 @@ import { Button, Container, Eyebrow, Photo, SectionTitle, ViewMore } from "@/com
 import { programs } from "@/content/programs";
 import ConcernTabs from "@/components/ConcernTabs";
 import HeroSlider from "@/components/HeroSlider";
+import StaffCards from "@/components/StaffCards";
 import Marquee from "@/components/Marquee";
 import ReviewCards from "@/components/ReviewCards";
 import { site } from "@/config/site";
@@ -61,6 +62,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2. 원장 · 실장 소개 — 병원 의료진 소개처럼 */}
+      <section className="py-24 md:py-32">
+        <Container>
+          <SectionTitle en="Our Therapists" sub="원하시는 담당자를 선택해 바로 예약하거나 상담하실 수 있어요.">
+            스파코지를 지키는 두 사람
+          </SectionTitle>
+          <div className="mt-12 md:mt-16">
+            <StaffCards />
+          </div>
+        </Container>
+      </section>
+
       {/* 2. Intro */}
       <section className="py-28 md:py-44">
         <Container className="max-w-3xl text-center">
@@ -78,54 +91,6 @@ export default function Home() {
           </p>
           <div className="reveal mt-14">
             <ViewMore href="/story" />
-          </div>
-        </Container>
-      </section>
-
-      {/* 3. Our Point — 박스 없이 가는 선으로 */}
-      <section className="border-t border-line/70 py-24 md:py-36">
-        <Container>
-          <SectionTitle en="Our Promise">스파코지만의 세 가지 약속</SectionTitle>
-          <div className="mt-16 grid md:mt-24 md:grid-cols-3">
-            {points.map((p, i) => (
-              <article
-                key={p.no}
-                className={`reveal border-line/80 py-10 md:px-10 md:py-4 ${i > 0 ? "border-t md:border-l md:border-t-0" : ""}`}
-                style={{ transitionDelay: `${i * 0.12}s` }}
-              >
-                <p className="font-display text-[1.1rem] italic text-accent">
-                  {p.no}. {p.en}
-                </p>
-                <h3 className="mt-6 whitespace-pre-line font-serif text-[1.3rem] leading-[1.6] text-primary md:text-[1.4rem]">{p.title}</h3>
-                <p className="mt-6 leading-[1.95] text-ink/75">{p.body}</p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* 4. 대표원장 */}
-      <section className="bg-primary py-24 text-paper md:py-36">
-        <Container className="grid items-center gap-14 md:grid-cols-[0.9fr_1.1fr] md:gap-24">
-          <Photo label="대표원장 김명숙" src={images.director} shape="arch" className="reveal aspect-[3/4] w-full max-w-sm justify-self-center" />
-          <div className="reveal">
-            <Eyebrow light>Director</Eyebrow>
-            <p className="mt-8 flex items-end gap-4 font-display leading-none">
-              <span className="text-[6.5rem] font-light md:text-[9rem]">{site.director.years}</span>
-              <span className="mb-4 text-[1.3rem] italic tracking-[0.1em] text-line md:mb-6 md:text-[1.6rem]">years of hands</span>
-            </p>
-            <h2 className="mt-8 font-serif text-[1.45rem] md:text-[1.75rem]">
-              대표원장 <span className="tracking-[0.25em]">{site.director.name}</span>
-            </h2>
-            <p className="mt-6 max-w-md leading-[2] text-paper/75">
-              화려한 기계보다 정직한 손을 믿습니다. {site.director.since}년부터 {site.director.years}년 동안 수많은 고객의 몸을 읽어 온
-              감각으로, 그날의 컨디션에 꼭 맞는 압과 흐름을 찾아드립니다.
-            </p>
-            <div className="mt-12">
-              <ViewMore href="/story" light>
-                Brand story
-              </ViewMore>
-            </div>
           </div>
         </Container>
       </section>
@@ -242,6 +207,28 @@ export default function Home() {
           </div>
         </Container>
       </section>
+      {/* 10. Our Promise — 맨 아래 */}
+      <section className="border-t border-line/70 py-24 md:py-36">
+        <Container>
+          <SectionTitle en="Our Promise">스파코지만의 세 가지 약속</SectionTitle>
+          <div className="mt-16 grid md:mt-24 md:grid-cols-3">
+            {points.map((p, i) => (
+              <article
+                key={p.no}
+                className={`reveal border-line/80 py-10 md:px-10 md:py-4 ${i > 0 ? "border-t md:border-l md:border-t-0" : ""}`}
+                style={{ transitionDelay: `${i * 0.12}s` }}
+              >
+                <p className="font-display text-[1.1rem] italic text-accent">
+                  {p.no}. {p.en}
+                </p>
+                <h3 className="mt-6 whitespace-pre-line font-serif text-[1.3rem] leading-[1.6] text-primary md:text-[1.4rem]">{p.title}</h3>
+                <p className="mt-6 leading-[1.95] text-ink/75">{p.body}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
     </>
   );
 }
