@@ -33,7 +33,7 @@ export default function SpaceSection() {
               오롯이 한 분만을 위한 시간을 준비합니다.
             </p>
             <span className="mt-7 border-b border-paper/80 pb-0.5 font-display text-[1.1rem] italic">View more</span>
-            <span className="mt-2 text-[0.8rem] text-paper/70">사진 {gallery.length}장 넘겨보기</span>
+            <span className="mt-2 text-[0.8rem] text-paper/70">사진 {gallery.length}장 넘겨 보기</span>
           </div>
         </button>
       </div>

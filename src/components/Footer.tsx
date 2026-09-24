@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr_1fr] md:px-8">
         <div>
           <p className="font-display text-[1.8rem] tracking-[0.28em] text-paper">SPA COZY</p>
-          <p className="mt-2 text-[0.7rem] tracking-[0.42em] text-paper/55">SINCE 2006 · 스파코지</p>
+          <p className="mt-2 text-[0.7rem] text-paper/55"><span className="tracking-[0.42em]">SINCE 2006</span> · 스파코지</p>
           <p className="mt-6 leading-relaxed">
             어깨가 가벼워지는 순간,
             <br />

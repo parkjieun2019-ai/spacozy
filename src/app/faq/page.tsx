@@ -71,7 +71,7 @@ export default function FaqPage() {
               </div>
             </dl>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Button href={site.links.map}>네이버 지도로 길찾기</Button>
+              <Button href={site.links.map}>네이버 지도로 길 찾기</Button>
               <Button href={site.links.tel} variant="outline">
                 전화하기
               </Button>

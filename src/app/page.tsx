@@ -20,7 +20,7 @@ const points = [
     no: "II",
     en: "Gentle Depth",
     title: "아프지 않은\n깊은 이완",
-    body: "멍들고 붓는 강한 마사지가 아닙니다. 순환의 길을 부드럽게 열어주는 관리로, 다음 날 몸살 없는 가벼움을 느끼실 수 있습니다.",
+    body: "멍들고 붓는 강한 마사지가 아닙니다. 순환의 길을 부드럽게 열어 주는 관리로, 다음 날 몸살 없는 가벼움을 느끼실 수 있습니다.",
   },
   {
     no: "III",
@@ -66,7 +66,7 @@ export default function Home() {
       <section className="py-24 md:py-32">
         <Container>
           <SectionTitle en="Our Therapists" sub="이름을 눌러 담당자를 선택하고, 바로 예약하거나 상담하실 수 있어요.">
-            스파코지를 지키는 두 사람
+            스파코지를 지키는 사람들
           </SectionTitle>
           <div className="reveal mt-10 md:mt-14">
             <StaffProfiles />
@@ -98,7 +98,7 @@ export default function Home() {
       {/* 5. 시그니처 — 셀파크 트리트먼트 타일 */}
       <section className="pt-24 md:pt-36">
         <Container>
-          <SectionTitle en="Signature Therapy">당신에게 필요한 깊이를 만나보세요</SectionTitle>
+          <SectionTitle en="Signature Therapy">당신에게 필요한 깊이를 만나 보세요</SectionTitle>
         </Container>
         <div className="mt-14 grid md:mt-20 md:grid-cols-2">
           {programs.map((p) => (

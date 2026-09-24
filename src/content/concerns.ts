@@ -12,7 +12,7 @@ export const concerns: Concern[] = [
   { slug: "neck-shoulder", name: "목 · 어깨 결림", desc: "딱딱하게 굳은 뒷목과 무거운 어깨", programs: ["balance", "face-line"] },
   { slug: "face-line", name: "흐려진 얼굴선", desc: "예전 같지 않은 턱선과 둔탁해진 윤곽", programs: ["face-line", "balance"] },
   { slug: "elasticity", name: "탄력 고민", desc: "푸석하고 힘없어 보이는 피부", programs: ["face-line"] },
-  { slug: "circulation", name: "잦은 붓기 · 순환", desc: "저녁마다 붓고 무거운 다리", programs: ["balance"] },
+  { slug: "circulation", name: "잦은 부기 · 순환", desc: "저녁마다 붓고 무거운 다리", programs: ["balance"] },
   { slug: "bodyline", name: "바디라인", desc: "뭉친 등과 무거워진 몸의 선", programs: ["balance"] },
   { slug: "dry", name: "건조한 피부", desc: "당기고 거칠어진 피부결", programs: ["face-line"] },
   { slug: "sensitive", name: "예민한 피부", desc: "작은 자극에도 붉어지는 피부", programs: ["face-line"] },

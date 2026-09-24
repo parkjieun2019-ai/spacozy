@@ -37,7 +37,7 @@ export default function StoryPage() {
           <div className="md:sticky md:top-32 md:self-start">
             <Photo label={`대표원장 ${site.director.name}`} src={images.directorStory} position="top" shape="arch" tone="wood" className="aspect-[4/5] w-full" />
             <p className="mt-5 text-center font-serif text-muted">
-              대표원장 <span className="tracking-[0.2em] text-ink">{site.director.name}</span> · 경력 {site.director.years}년
+              대표원장 <span className="tracking-[0.04em] text-ink">{site.director.name}</span> · 경력 {site.director.years}년
             </p>
           </div>
           <div>
@@ -60,7 +60,7 @@ export default function StoryPage() {
             <div className="mt-12 text-right">
               <p className="text-muted">대표원장</p>
               {/* TODO: 자필 서명 이미지로 교체 (public/images/signature.png) */}
-              <p className="mt-1 font-serif text-[2rem] italic tracking-[0.3em] text-primary">{site.director.name}</p>
+              <p className="mt-1 font-serif text-[2rem] italic tracking-[0.06em] text-primary">{site.director.name}</p>
               <p className="text-muted">올림</p>
             </div>
 

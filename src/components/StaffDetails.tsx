@@ -8,7 +8,7 @@ export default function StaffDetails() {
         <article key={s.id} className="reveal rounded-[18px] border border-line bg-paper p-7 md:p-10" style={{ transitionDelay: `${i * 0.12}s` }}>
           <p className="font-display text-[1rem] italic text-accent">SPA COZY&apos;s {s.roleEn}</p>
           <h3 className="mt-2 flex items-baseline gap-2 font-serif text-ink">
-            <span className="text-[1.8rem] font-semibold tracking-[0.12em]">{s.name}</span>
+            <span className="text-[1.8rem] font-semibold tracking-[0.03em]">{s.name}</span>
             <span className="text-muted">{s.role}</span>
           </h3>
           <p className="mt-2 inline-flex rounded-full bg-mist px-3 py-1 text-[0.85rem] font-semibold text-primary">{s.career}</p>

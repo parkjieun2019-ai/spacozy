@@ -7,7 +7,7 @@ import { site } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "고민별 추천",
-  description: "목·어깨 결림, 흐려진 얼굴선, 잦은 붓기, 웨딩 준비까지 — 고민에 맞는 스파코지 관리를 찾아보세요.",
+  description: "목·어깨 결림, 흐려진 얼굴선, 잦은 부기, 웨딩 준비까지 — 고민에 맞는 스파코지 관리를 찾아보세요.",
 };
 
 const bySlug = Object.fromEntries(programs.map((p) => [p.slug, p]));
