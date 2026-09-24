@@ -11,6 +11,10 @@ export type Staff = {
   intro: string;
   specialties: string[];
   photo: string; // TODO: 실제 사진으로 교체
+  /** 두 사진의 얼굴 크기·위치를 맞추기 위한 값 (사진 교체 시 조정) */
+  photoFocus: string;
+  photoZoom: number;
+  quote: string;
   bookingUrl: string; // TODO: 네이버 예약에서 담당자별 링크가 있으면 교체
 };
 
@@ -24,6 +28,9 @@ export const staff: Staff[] = [
     intro: "화려한 기계보다 정직한 손을 믿습니다. 그날의 컨디션에 꼭 맞는 압과 흐름을 찾아드립니다.",
     specialties: ["전신 밸런스 수기 테라피", "페이스 선(線) 디자인", "목 · 어깨 · 등 이완 케어"],
     photo: images.directorStory,
+    photoFocus: "50% 22%",
+    photoZoom: 1,
+    quote: "몸이 가벼워지는 순간, 얼굴의 선도 함께 살아납니다.",
     bookingUrl: site.links.booking,
   },
   {
@@ -35,6 +42,9 @@ export const staff: Staff[] = [
     intro: "문턱을 넘는 순간부터 편안하시도록, 첫 상담부터 사후 관리까지 세심하게 챙겨드립니다.",
     specialties: ["웰컴 차트 맞춤 상담", "뷰티 큐레이팅", "전 프로그램 관리 가능"],
     photo: images.manager,
+    photoFocus: "58% 16%",
+    photoZoom: 1.1,
+    quote: "문턱을 넘는 순간부터, 당신의 쉼이 시작됩니다.",
     bookingUrl: site.links.booking,
   },
 ];
