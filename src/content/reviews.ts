@@ -1,9 +1,59 @@
-// 고객 후기 — 고객이 공개에 동의한 후기만 넣습니다. (광고 규정: 실제 후기만, 과장·편집 금지)
-// 비어 있으면 홈페이지에는 "후기 준비 중" 카드와 네이버 후기 버튼이 보입니다.
-//
-// 예시:
-// { name: "김○○", age: "50대", program: "전신 밸런스 비움 테라피", text: "…", photo: "/images/review-1.jpg" },
+// 고객 후기
+// ⚠ 지금은 디자인 확인용 "예시" 후기입니다. (화면에 '예시' 표시가 붙습니다)
+//   공개(배포) 전 반드시 실제 고객 후기(네이버 플레이스 리뷰 등, 이름은 김○○처럼 가림)로 교체하고
+//   SAMPLE_REVIEWS 를 false 로 바꾸세요. 거짓 후기 게시는 표시광고법 위반입니다.
 
-export type Review = { name: string; age?: string; program: string; text: string; photo?: string };
+export const SAMPLE_REVIEWS = true;
 
-export const reviews: Review[] = [];
+export type Review = { name: string; age?: string; program: string; text: string; date?: string };
+
+export const reviews: Review[] = [
+  {
+    name: "김○○",
+    age: "50대",
+    program: "전신 밸런스 비움 테라피",
+    text: "어깨가 늘 돌덩이 같았는데 받고 나오는 길에 몸이 한결 가벼웠어요. 원장님 손이 정말 따뜻하세요.",
+  },
+  {
+    name: "이○○",
+    age: "40대",
+    program: "페이스 선 디자인 테라피",
+    text: "얼굴만 만지는 줄 알았는데 목이랑 데콜테부터 풀어주셔서 신기했어요. 거울 볼 때 기분이 좋아요.",
+  },
+  {
+    name: "박○○",
+    age: "60대",
+    program: "전신 밸런스 비움 테라피",
+    text: "세게 누르지 않는데도 시원해요. 다음 날 몸살 없이 개운해서 벌써 세 번째 방문이에요.",
+  },
+  {
+    name: "최○○",
+    age: "50대",
+    program: "웰컴 차트 상담",
+    text: "처음 갔을 때 컨디션을 꼼꼼히 물어봐 주셔서 믿음이 갔어요. 실장님 상담이 편안했습니다.",
+  },
+  {
+    name: "정○○",
+    age: "40대",
+    program: "페이스 선 디자인 테라피",
+    text: "기계 위주 관리에 지쳐 있었는데 손으로 해주는 관리가 이렇게 다르구나 느꼈어요.",
+  },
+  {
+    name: "강○○",
+    age: "50대",
+    program: "혼주 웨딩 관리",
+    text: "딸 결혼식 앞두고 다녔어요. 사진 찍는 날 컨디션이 좋아서 마음이 든든했답니다.",
+  },
+  {
+    name: "윤○○",
+    age: "40대",
+    program: "전신 밸런스 비움 테라피",
+    text: "공간이 조용하고 아늑해서 누워 있으면 잠이 솔솔 와요. 제 시간을 선물받는 느낌이에요.",
+  },
+  {
+    name: "한○○",
+    age: "60대",
+    program: "정액권 멤버십",
+    text: "딸이랑 같이 회원권 나눠 쓰고 있어요. 모녀가 함께 다니는 즐거움이 생겼네요.",
+  },
+];

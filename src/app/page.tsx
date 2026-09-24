@@ -4,7 +4,6 @@ import { programs } from "@/content/programs";
 import ConcernTabs from "@/components/ConcernTabs";
 import HeroSlider from "@/components/HeroSlider";
 import StaffCards from "@/components/StaffCards";
-import Marquee from "@/components/Marquee";
 import ReviewCards from "@/components/ReviewCards";
 import { site } from "@/config/site";
 import { images } from "@/content/images";
@@ -137,8 +136,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
-      <Marquee dark />
 
       {/* 7. 공간 */}
       <section className="py-24 md:py-36">

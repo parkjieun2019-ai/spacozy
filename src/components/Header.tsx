@@ -8,7 +8,7 @@ import { nav, site } from "@/config/site";
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <Link href="/" className={`inline-flex flex-col items-center leading-none text-primary ${className}`} aria-label="스파코지 홈">
-      <span className="font-display text-[1.55rem] tracking-[0.28em] md:text-[1.75rem]">SPA COZY</span>
+      <span className="whitespace-nowrap font-display text-[1.45rem] tracking-[0.26em] md:text-[1.75rem]">SPA COZY</span>
       <span className="mt-1.5 flex items-center gap-2 text-[0.62rem] tracking-[0.42em] text-muted">
         <span className="h-px w-4 bg-line" />
         SINCE 2006
@@ -48,7 +48,7 @@ export default function Header() {
             <NavLink key={n.href} href={n.href} label={n.label} active={pathname === n.href} />
           ))}
         </nav>
-        <div className="col-start-1 lg:col-start-2">
+        <div className="col-span-2 col-start-1 lg:col-span-1 lg:col-start-2">
           <Logo className="!items-start lg:!items-center" />
         </div>
         <nav className="hidden items-center justify-end gap-6 lg:flex xl:gap-9" aria-label="보조 메뉴">
