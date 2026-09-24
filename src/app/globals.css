@@ -167,3 +167,12 @@ h3 {
 .review-track:hover {
   animation-play-state: paused;
 }
+
+/* 모바일 메뉴: 오른쪽에서 밀려 들어오기 */
+@keyframes menu-slide {
+  from { transform: translateX(100%); }
+  to { transform: none; }
+}
+.menu-slide {
+  animation: menu-slide 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}

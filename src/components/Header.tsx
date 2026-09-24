@@ -41,6 +41,7 @@ export default function Header() {
   }, [open]);
 
   return (
+    <>
     <header className="sticky top-0 z-40 border-b border-line/60 bg-paper/90 backdrop-blur-md">
       <div className="mx-auto grid h-18 max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-5 md:h-22 md:px-10">
         <nav className="hidden items-center gap-6 lg:flex xl:gap-9" aria-label="주 메뉴">
@@ -80,32 +81,63 @@ export default function Header() {
         </button>
       </div>
 
-      {open && (
-        <nav className="fixed inset-x-0 top-18 bottom-0 z-40 overflow-y-auto bg-paper px-6 pb-32 pt-6 lg:hidden" aria-label="모바일 메뉴">
-          <ul className="divide-y divide-line/70 border-y border-line/70">
-            <li>
-              <Link href="/" className="flex items-baseline justify-between py-5">
-                <span className="font-serif text-xl">홈</span>
-                <span className="font-display text-muted">Home</span>
-              </Link>
-            </li>
-            {nav.map((n) => (
-              <li key={n.href}>
-                <Link href={n.href} className="flex items-baseline justify-between py-5">
-                  <span className={`font-serif text-xl ${pathname === n.href ? "text-primary" : ""}`}>{n.label}</span>
-                  <span className="font-display text-muted">{n.en}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 space-y-1 text-muted">
-            <p>예약 문의 <a href={site.links.tel} className="text-ink underline underline-offset-4">{site.phone}</a></p>
-            {site.hours.map((h) => (
-              <p key={h.day}>{h.day} {h.time}</p>
-            ))}
-          </div>
-        </nav>
-      )}
     </header>
+
+      {/* 모바일 메뉴 — header의 blur 효과 밖에 두어야 화면 전체 높이를 씁니다 */}
+      {open && (
+        <div className="fixed inset-x-0 top-18 bottom-0 z-[45] lg:hidden">
+          {/* 왼쪽 어두운 영역 — 누르면 닫힘 */}
+          <button type="button" aria-label="메뉴 닫기" onClick={() => setOpen(false)} className="absolute inset-0 bg-ink/40 backdrop-blur-[2px]" />
+
+          {/* 오른쪽 반 화면 메뉴 */}
+          <nav
+            aria-label="모바일 메뉴"
+            className="menu-slide absolute inset-y-0 right-0 flex w-[56%] min-w-[210px] max-w-[320px] flex-col overflow-y-auto bg-paper pb-24 shadow-2xl shadow-ink/20"
+          >
+            <ul className="pt-2">
+              {[{ href: "/", label: "홈" }, ...nav].map((n) => {
+                const on = pathname === n.href;
+                return (
+                  <li key={n.href} className="border-b border-line">
+                    <Link
+                      href={n.href}
+                      aria-current={on ? "page" : undefined}
+                      className={`flex min-h-14 items-center justify-between gap-2 border-l-[3px] py-3.5 pl-4 pr-3 ${on ? "border-primary bg-mist" : "border-transparent"}`}
+                    >
+                      <span className={`text-[1.08rem] font-semibold leading-snug ${on ? "text-primary" : "text-ink"}`}>{n.label}</span>
+                      <span className={`text-[1.2rem] leading-none ${on ? "text-primary" : "text-line"}`} aria-hidden>
+                        ›
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div className="mt-auto space-y-3 px-4 pt-6">
+              <a
+                href={site.links.booking}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-13 items-center justify-center bg-primary text-[1rem] font-semibold text-paper"
+              >
+                네이버 예약하기
+              </a>
+              <a href={site.links.tel} className="flex min-h-13 items-center justify-center border border-primary text-[1rem] font-semibold text-primary">
+                {site.phone}
+              </a>
+              <dl className="space-y-1 pt-2 text-[0.88rem]">
+                {site.hours.map((h) => (
+                  <div key={h.day} className="flex justify-between gap-2">
+                    <dt className="text-muted">{h.day}</dt>
+                    <dd className={h.time.includes("휴무") ? "text-muted" : "font-semibold text-ink"}>{h.time}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </nav>
+        </div>
+      )}
+    </>
   );
 }
