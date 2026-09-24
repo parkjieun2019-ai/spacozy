@@ -25,4 +25,12 @@ export const images = {
   spaceRoom: unsplash("1700142360825-d21edc53c8db"), // TODO: 프라이빗 관리실
   spaceLobby: unsplash("1596748176765-08b3a6c9969a", 700), // TODO: 로비
   spaceTea: unsplash("1616371041303-a468ea826828", 700), // TODO: 웰컴 티
+  // 공간 사진첩 (TODO: 실제 매장 사진으로 교체 — 관리실·로비·웰컴 티 등)
+  spaceGallery: [
+    { src: unsplash("1700142360825-d21edc53c8db", 1600), caption: "프라이빗 관리실" },
+    { src: unsplash("1596748176765-08b3a6c9969a", 1400), caption: "휴식 공간" },
+    { src: unsplash("1616371041303-a468ea826828", 1400), caption: "웰컴 티" },
+    { src: unsplash("1706795033849-7ca391f007c5", 1600), caption: "관리 준비" },
+    { src: unsplash("1540555700478-4be289fbecef", 1600), caption: "정갈한 어메니티" },
+  ],
 };

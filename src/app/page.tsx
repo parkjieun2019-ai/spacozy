@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { Button, Container, Eyebrow, Photo, SectionTitle, ViewMore } from "@/components/ui";
+import { Button, Container, Eyebrow, SectionTitle, ViewMore } from "@/components/ui";
 import { programs } from "@/content/programs";
 import ConcernTabs from "@/components/ConcernTabs";
 import HeroSlider from "@/components/HeroSlider";
 import StaffProfiles from "@/components/StaffProfiles";
+import SpaceSection from "@/components/SpaceSection";
 import ReviewCards from "@/components/ReviewCards";
 import { site } from "@/config/site";
 import { images } from "@/content/images";
@@ -137,32 +138,10 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 7. 공간 */}
-      <section className="py-24 md:py-36">
+      {/* 7. 공간 — 휴대폰은 배너 + View more 사진첩 */}
+      <section className="py-20 md:py-36">
         <Container>
-          <div className="grid gap-12 md:grid-cols-12 md:gap-8">
-            <div className="reveal md:col-span-4 md:self-center">
-              <p className="font-display text-[2.5rem] leading-[1.1] text-primary md:text-[3.2rem]">
-                The Space
-                <br />
-                <span className="italic">of Rest</span>
-              </p>
-              <h2 className="mt-8 font-serif text-[1.25rem] leading-[1.7] text-ink md:text-[1.4rem]">
-                문턱을 넘는 순간부터
-                <br />
-                시작되는 편안함
-              </h2>
-              <p className="mt-6 leading-[1.95] text-ink/75">
-                다섯 개의 프라이빗 관리실에서 오롯이 한 분만을 위한 시간을 준비합니다. 언제 들러도 마음 편안한, 친정집 같은 안식처가
-                되겠습니다.
-              </p>
-            </div>
-            <Photo label="프라이빗 관리실" src={images.spaceRoom} className="reveal aspect-[4/5] md:col-span-5 md:aspect-auto md:h-[620px]" />
-            <div className="grid grid-cols-2 gap-4 md:col-span-3 md:grid-cols-1 md:gap-8 md:pt-24">
-              <Photo label="로비" src={images.spaceLobby} shape="arch" className="reveal aspect-[3/4]" />
-              <Photo label="웰컴 티" src={images.spaceTea} className="reveal aspect-[3/4] md:aspect-square" />
-            </div>
-          </div>
+          <SpaceSection />
         </Container>
       </section>
 
