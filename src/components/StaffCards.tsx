@@ -2,8 +2,8 @@ import { staff } from "@/content/staff";
 import { site } from "@/config/site";
 import { Photo } from "@/components/ui";
 
+// 상담 버튼: 카카오톡 비즈니스 채널 1:1 채팅으로 연결 (채널 ID는 src/config/site.ts 에 입력, 입력 전에는 전화로 연결)
 const consultHref = site.links.kakaoChat || site.links.tel;
-const consultLabel = site.links.kakaoChat ? "카톡 상담" : "전화 상담";
 
 /** 병원 '의료진 소개'처럼 담당자를 나란히 보여주고 바로 예약·상담으로 연결 */
 export default function StaffCards() {
@@ -46,7 +46,7 @@ export default function StaffCards() {
                 {...(consultHref.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="flex min-h-13 items-center justify-center border border-primary text-[0.95rem] font-semibold text-primary transition-colors hover:bg-primary hover:text-paper"
               >
-                {consultLabel}
+                상담
               </a>
             </div>
           </div>
