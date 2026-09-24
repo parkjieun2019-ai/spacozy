@@ -21,12 +21,15 @@ export type MenuCategory = {
   nameEn: string;
   desc: string;
   note?: string;
+  /** 어느 시그니처 프로그램에 속하는지 (programs.ts 의 slug) */
+  signature?: string;
   items: MenuItem[];
 };
 
 export const menu: MenuCategory[] = [
   {
     id: "face",
+    signature: "face-line",
     name: "페이셜",
     nameEn: "Facial",
     desc: "피부 컨디션에 맞춘 맞춤 피부 관리",
@@ -42,6 +45,7 @@ export const menu: MenuCategory[] = [
   },
   {
     id: "contour",
+    signature: "face-line",
     name: "윤곽 · 리프팅",
     nameEn: "Contour",
     desc: "얼굴선과 탄력을 위한 관리",
@@ -52,6 +56,7 @@ export const menu: MenuCategory[] = [
   },
   {
     id: "body",
+    signature: "balance",
     name: "바디",
     nameEn: "Body",
     desc: "뭉친 몸을 풀고 순환을 돕는 수기 중심 바디 관리",
@@ -80,3 +85,18 @@ export const menu: MenuCategory[] = [
 ];
 
 export const won = (n: number) => `${n.toLocaleString("ko-KR")}원`;
+
+/** 시그니처에 속한 세부 프로그램들의 1회 가격 범위 (예: "90,000원 ~ 240,000원") */
+export function priceRange(signature: string) {
+  const prices = menu
+    .filter((c) => c.signature === signature)
+    .flatMap((c) => c.items.map((i) => i.price))
+    .filter((p): p is number => typeof p === "number");
+  if (!prices.length) return null;
+  const lo = Math.min(...prices);
+  const hi = Math.max(...prices);
+  return lo === hi ? won(lo) : `${won(lo)} ~ ${won(hi)}`;
+}
+
+/** 시그니처에 속한 카테고리 id 목록 */
+export const categoriesOf = (signature: string) => menu.filter((c) => c.signature === signature).map((c) => c.id);

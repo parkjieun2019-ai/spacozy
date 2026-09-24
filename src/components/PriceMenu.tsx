@@ -5,15 +5,17 @@ import { menu, won } from "@/content/menu";
 import { site } from "@/config/site";
 
 /** 카테고리 탭 + 세부 프로그램 가격표 */
-export default function PriceMenu() {
-  const [active, setActive] = useState(menu[0].id);
-  const cat = menu.find((c) => c.id === active) ?? menu[0];
+export default function PriceMenu({ ids }: { ids?: string[] }) {
+  const list = ids ? menu.filter((c) => ids.includes(c.id)) : menu;
+  const [active, setActive] = useState(list[0].id);
+  const cat = list.find((c) => c.id === active) ?? list[0];
 
   return (
     <div className="mx-auto max-w-4xl">
-      {/* 카테고리 탭 */}
-      <div role="tablist" aria-label="프로그램 카테고리" className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-        {menu.map((c) => {
+      {/* 카테고리 탭 (2개 이상일 때만) */}
+      {list.length > 1 && (
+      <div role="tablist" aria-label="프로그램 카테고리" className={`grid gap-2 ${list.length === 2 ? "grid-cols-2" : "grid-cols-2 sm:grid-cols-4"}`}>
+        {list.map((c) => {
           const on = c.id === active;
           return (
             <button
@@ -31,9 +33,10 @@ export default function PriceMenu() {
           );
         })}
       </div>
+      )}
 
       {/* 가격표 */}
-      <div key={cat.id} role="tabpanel" className="fade-up mt-6 rounded-[18px] border border-line bg-paper p-5 md:p-8">
+      <div key={cat.id} role="tabpanel" className={`fade-up ${list.length > 1 ? "mt-6" : ""} rounded-[18px] border border-line bg-paper p-5 md:p-8`}>
         <div className="flex flex-wrap items-baseline justify-between gap-2 border-b-2 border-ink pb-4">
           <h3 className="font-serif text-[1.35rem] font-semibold text-ink">{cat.name}</h3>
           <p className="text-[0.92rem] text-muted">{cat.desc}</p>

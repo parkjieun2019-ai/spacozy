@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Button, Container, Eyebrow, PageHero, Photo, SectionTitle } from "@/components/ui";
 import PriceMenu from "@/components/PriceMenu";
 import { formatPrice, programs } from "@/content/programs";
+import { categoriesOf, priceRange } from "@/content/menu";
 import { site } from "@/config/site";
 import { images } from "@/content/images";
 
@@ -39,15 +40,15 @@ export default function ProgramsPage() {
                       <dd className="mt-1 font-serif text-[1.15rem] text-primary">{p.durationLabel}</dd>
                     </div>
                     <div>
-                      <dt className="text-sm text-muted">가격</dt>
-                      <dd className="mt-1 font-serif text-[1.15rem] text-primary">{formatPrice(p.price)}</dd>
+                      <dt className="text-sm text-muted">가격 (1회)</dt>
+                      <dd className="mt-1 font-serif text-[1.02rem] text-primary">{priceRange(p.slug) ?? formatPrice(p.price)}</dd>
                     </div>
                   </dl>
 
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                     <Button href={p.bookingUrl ?? site.links.booking}>이 프로그램 예약하기</Button>
-                    <Button href="/faq" variant="outline">
-                      자주 묻는 질문
+                    <Button href={`#${p.slug}-price`} variant="outline">
+                      세부 프로그램 · 가격
                     </Button>
                   </div>
                 </div>
@@ -65,18 +66,26 @@ export default function ProgramsPage() {
                   ))}
                 </ol>
               </div>
+
+              {categoriesOf(p.slug).length > 0 && (
+                <div id={`${p.slug}-price`} className="mt-16 scroll-mt-24">
+                  <p className="mb-2 text-center font-display text-[1.05rem] italic tracking-[0.12em] text-accent">Programs &amp; Price</p>
+                  <h3 className="mb-8 text-center font-serif text-[1.35rem] font-semibold text-ink md:text-[1.6rem]">{p.name} 세부 프로그램 · 가격</h3>
+                  <PriceMenu ids={categoriesOf(p.slug)} />
+                </div>
+              )}
             </Container>
           </section>
         ))}
 
-      {/* 전체 프로그램 · 가격표 (카테고리별) */}
-      <section id="price" className="scroll-mt-24 border-t border-line bg-mist py-20 md:py-28">
+      {/* 웨딩 관리 (시그니처 가격표는 각 시그니처 안에) */}
+      <section id="wedding" className="scroll-mt-24 border-t border-line bg-mist py-20 md:py-28">
         <Container>
-          <SectionTitle en="Price List" sub="카테고리를 누르면 세부 프로그램과 가격을 볼 수 있어요.">
-            전체 프로그램 · 가격표
+          <SectionTitle en="Wedding Care" sub="혼주 · 예비신부 · 가족 동반 — 예식 일정에 맞춰 코스를 구성해 드려요.">
+            웨딩 관리
           </SectionTitle>
           <div className="mt-10 md:mt-14">
-            <PriceMenu />
+            <PriceMenu ids={["wedding"]} />
           </div>
         </Container>
       </section>

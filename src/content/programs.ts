@@ -33,7 +33,7 @@ export const programs: Program[] = [
       { title: "복부 온열 케어", desc: "복부를 따뜻하게 감싸 몸의 중심부터 편안하게 데워 줍니다." },
       { title: "두피 이완 마무리", desc: "굳은 두피를 부드럽게 풀어 주는 이완 케어와 스트레칭." },
     ],
-    durationLabel: "90분 내외", // TODO: 확인
+    durationLabel: "40 ~ 90분 (프로그램별)",
     durationMinutes: 90,
     price: null,
     published: true,
@@ -53,7 +53,7 @@ export const programs: Program[] = [
       { title: "광채 부스팅", desc: "맞춤 앰플을 바른 뒤, 촉촉하게 스며들도록 돕는 엄선한 기기 케어를 더합니다." },
       { title: "수분 잠금 & 릴랙싱", desc: "진정 모델링 마스크와 함께 온전한 휴식으로 마무리합니다." },
     ],
-    durationLabel: "80분 내외", // TODO: 확인
+    durationLabel: "70 ~ 90분 (프로그램별)",
     durationMinutes: 80,
     price: null,
     published: true,
