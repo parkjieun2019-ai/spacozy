@@ -156,3 +156,9 @@ h3 {
 @media (prefers-reduced-motion: reduce) {
   .unveil, .unveil > img { clip-path: none; transform: none; transition: none; }
 }
+
+/* 메인 슬라이드 진행 막대 */
+@keyframes progress {
+  from { width: 0; }
+  to { width: 100%; }
+}

@@ -6,6 +6,12 @@ const unsplash = (id: string, w = 1200) =>
 
 export const images = {
   hero: unsplash("1639162906614-0603b0ae95fd", 1100), // TODO: 매장 관리실 대표 사진
+  // 메인 슬라이드 (TODO: 실제 매장·관리 사진으로 교체)
+  heroSlides: [
+    { src: unsplash("1639162906614-0603b0ae95fd", 1800), caption: "Full Body Balance" },
+    { src: unsplash("1570172619644-dfd03ed5d881", 1800), caption: "Face Line Design" },
+    { src: unsplash("1544161515-4ab6ce6db874", 1800), caption: "Aroma Relaxing" },
+  ],
   director: unsplash("1643684391140-c5056cfd3436", 900), // TODO: 대표원장 김명숙 사진
   directorStory: unsplash("1745327883508-b6cd32e5dde5", 900), // TODO: 대표원장 김명숙 사진
   manager: unsplash("1706795033849-7ca391f007c5", 900), // TODO: 실장 켈리 사진

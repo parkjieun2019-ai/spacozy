@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button, Container, Eyebrow, Photo, SectionTitle, ViewMore } from "@/components/ui";
 import { programs } from "@/content/programs";
 import ConcernTabs from "@/components/ConcernTabs";
+import HeroSlider from "@/components/HeroSlider";
 import Marquee from "@/components/Marquee";
 import ReviewCards from "@/components/ReviewCards";
 import { site } from "@/config/site";
@@ -56,10 +57,7 @@ export default function Home() {
           </div>
         </Container>
         <div className="mx-auto mt-12 max-w-[1440px] px-4 md:mt-16 md:px-6">
-          <div className="relative h-[62svh] min-h-[380px] overflow-hidden rounded-[18px] md:h-[78vh]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={images.hero} alt="스파코지 수기 테라피" className="tone-photo slow-zoom absolute inset-0 h-full w-full object-cover" />
-          </div>
+          <HeroSlider />
         </div>
       </section>
 
