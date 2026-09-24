@@ -3,7 +3,7 @@ import { nav, site } from "@/config/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#151211] pb-28 text-paper/80 lg:pb-0">
+    <footer className="bg-[#43342c] pb-28 text-paper/80 lg:pb-0">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr_1fr] md:px-8">
         <div>
           <p className="font-display text-[1.8rem] tracking-[0.18em] text-paper">SPA COZY</p>

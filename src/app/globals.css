@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #ffffff;
-  --color-mist: #f5f2ef;
-  --color-line: #e4ddd8;
-  --color-muted: #79706c;
-  --color-primary: #2a2423;
-  --color-primary-soft: #403634;
-  --color-accent: #8c7b72;
-  --color-ink: #26211f;
+  --color-paper: #f7f2ea;
+  --color-mist: #efe6da;
+  --color-line: #e2d6c6;
+  --color-muted: #7c6e64;
+  --color-primary: #6b5244;
+  --color-primary-soft: #7e6354;
+  --color-accent: #b08d74;
+  --color-ink: #3a2f2a;
 
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Malgun Gothic", sans-serif;
   --font-serif: var(--font-noto-serif), "Nanum Myeongjo", serif;
@@ -101,7 +101,7 @@ h3 {
   }
 }
 
-/* 셀파크 톤: 사진을 살짝 따뜻하고 차분하게 통일 */
+/* 웜 린넨 톤: 사진을 밝고 따뜻하게 통일 */
 .tone-photo {
-  filter: sepia(0.22) saturate(0.78) contrast(1.02);
+  filter: sepia(0.1) saturate(0.9) brightness(1.04);
 }

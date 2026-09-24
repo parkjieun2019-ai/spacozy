@@ -107,7 +107,7 @@ export default function Home() {
       {/* 4. 대표원장 */}
       <section className="bg-primary py-24 text-paper md:py-36">
         <Container className="grid items-center gap-14 md:grid-cols-[0.9fr_1.1fr] md:gap-24">
-          <Photo label="대표원장 김명숙" src={images.director} className="reveal aspect-[3/4] w-full max-w-sm justify-self-center" />
+          <Photo label="대표원장 김명숙" src={images.director} shape="arch" className="reveal aspect-[3/4] w-full max-w-sm justify-self-center" />
           <div className="reveal">
             <Eyebrow light>Director</Eyebrow>
             <p className="mt-8 flex items-end gap-4 font-display leading-none">
@@ -145,7 +145,7 @@ export default function Home() {
                 loading="lazy"
                 className="tone-photo absolute inset-0 h-full w-full object-cover transition-transform duration-[1.8s] ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-[#1c1716]/45 transition-colors duration-500 group-hover:bg-[#1c1716]/60" />
+              <div className="absolute inset-0 bg-[#3a2a22]/35 transition-colors duration-500 group-hover:bg-[#3a2a22]/50" />
               <div className="relative flex h-full flex-col items-center justify-center px-6 text-center text-paper">
                 <p className="font-display text-[1.6rem] uppercase tracking-[0.12em] md:text-[2rem]">{p.nameEn.replace(" Therapy", "")}</p>
                 <p className="mt-4 font-serif text-[1.2rem] leading-[1.6] md:text-[1.35rem]">{p.name}</p>
@@ -204,7 +204,7 @@ export default function Home() {
             </div>
             <Photo label="프라이빗 관리실" src={images.spaceRoom} className="reveal aspect-[4/5] md:col-span-5 md:aspect-auto md:h-[620px]" />
             <div className="grid grid-cols-2 gap-4 md:col-span-3 md:grid-cols-1 md:gap-8 md:pt-24">
-              <Photo label="로비" src={images.spaceLobby} className="reveal aspect-[3/4]" />
+              <Photo label="로비" src={images.spaceLobby} shape="arch" className="reveal aspect-[3/4]" />
               <Photo label="웰컴 티" src={images.spaceTea} className="reveal aspect-[3/4] md:aspect-square" />
             </div>
           </div>
