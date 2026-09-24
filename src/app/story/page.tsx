@@ -80,35 +80,9 @@ export default function StoryPage() {
         </Container>
       </section>
 
-      {/* 실장 큐레이팅 */}
-      <section className="bg-mist/50 py-20 md:py-32">
-        <Container className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr] md:gap-20">
-          <div className="order-2 md:order-1">
-            <Eyebrow className="mb-5">Beauty Curating</Eyebrow>
-            <h2 className="font-serif text-[1.5rem] leading-[1.7] text-primary md:text-[1.9rem]">
-              “문턱을 넘는 순간부터 시작되는 편안함,
-              <br className="hidden md:block" /> 고객님의 진정한 쉼을 돕겠습니다.”
-            </h2>
-            <div className="mt-10 space-y-6 text-[1.05rem] leading-[2] text-ink/85">
-              <p>
-                단순히 관리실에 머무는 시간이 아닌, 첫 방문부터 사후 관리까지 오직 한 분만을 위한 프라이빗 컨설팅을 진행합니다.
-              </p>
-              <p>
-                웰컴 차트를 통해 그날의 컨디션과 수면 상태, 고민 부위를 세심하게 살펴 가장 알맞은 관리를 큐레이션해 드립니다. 언제
-                들러도 마음 편안한 친정집 같은 안식처가 되도록 정성을 다해 모시겠습니다.
-              </p>
-            </div>
-            <p className="mt-10 font-serif text-muted">
-              실장 <span className="text-ink">{site.manager.name}</span> · 경력 {site.manager.years}
-            </p>
-          </div>
-          <Photo label={`실장 ${site.manager.name}`} src={images.manager} position="top" shape="arch" className="order-1 aspect-[4/5] w-full md:order-2" />
-        </Container>
-      </section>
-
       <ScrollToHash />
       {/* 테라피스트 상세 프로필 (홈에서 옮겨옴) */}
-      <section id="therapists" className="scroll-mt-24 py-20 md:py-28">
+      <section id="therapists" className="scroll-mt-24 bg-mist py-20 md:py-28">
         <Container>
           <SectionTitle en="Our Therapists">스파코지 테라피스트 프로필</SectionTitle>
           <div className="mt-12">
