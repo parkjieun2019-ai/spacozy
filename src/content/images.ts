@@ -1,6 +1,8 @@
 // 임시 사진 (Unsplash 무료 라이선스). 실제 매장·원장님 사진을 받으면
 // public/images/ 에 넣고 여기 값을 "/images/파일명.jpg" 로 바꾸면 됩니다.
 
+import { asset } from "@/lib/asset";
+
 const unsplash = (id: string, w = 1200) =>
   `https://images.unsplash.com/photo-${id}?w=${w}&q=75&auto=format&fit=crop`;
 
@@ -14,8 +16,8 @@ export const images = {
   ],
   director: unsplash("1643684391140-c5056cfd3436", 900), // TODO: 대표원장 김명숙 사진
   // ⚠ 임시 인물 사진 — 공개(배포) 전 반드시 실제 사진으로 교체 (manager-temp는 pngtree 워터마크 스톡 이미지)
-  directorStory: "/images/director-temp.png", // TODO: 대표원장 김명숙 실제 사진
-  manager: "/images/manager-temp.png", // TODO: 실장 켈리 실제 사진
+  directorStory: asset("/images/director-temp.png"), // TODO: 대표원장 김명숙 실제 사진
+  manager: asset("/images/manager-temp.png"), // TODO: 실장 켈리 실제 사진
   programs: {
     balance: unsplash("1741522509438-a120c0bb5e88"),
     "face-line": unsplash("1706795033728-9232ef548a16"),

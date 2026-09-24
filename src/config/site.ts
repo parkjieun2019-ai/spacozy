@@ -12,7 +12,9 @@ export const site = {
   nameEn: "SPA COZY",
   description:
     "죽전·수지·성복동 20년 경력 대표원장의 1:1 수기 테라피. 어깨가 가벼워지면 얼굴의 선도 살아납니다. 스파코지 에스테틱.",
-  url: "https://spacozy.vercel.app", // TODO: 정식 도메인 연결 후 교체
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://spacozy.vercel.app", // TODO: 정식 도메인 연결 후 교체
+  /** 의견 확인용 미리보기 배포 — 검색엔진 노출 차단 */
+  preview: process.env.NEXT_PUBLIC_PREVIEW === "1",
   address: "경기도 용인시 기흥구 죽전로 20 죽전누리에뜰 상가 B동 2층 221호",
   addressShort: "죽전누리에뜰 상가 B동 2층 221호",
   phone: "031-272-9595",
