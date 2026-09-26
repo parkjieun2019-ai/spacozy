@@ -16,7 +16,7 @@ export default function MembershipPage() {
       <section className="py-16 md:py-24">
         <Container className="grid gap-6 md:grid-cols-2">
           {/* 첫 방문 */}
-          <article className="flex flex-col bg-primary p-9 text-paper md:p-12">
+          <article id="welcome" className="flex scroll-mt-24 flex-col bg-primary p-9 text-paper md:p-12">
             <p className="font-display text-[1.05rem] italic tracking-[0.12em] text-line">Welcome Benefit</p>
             <h2 className="mt-4 font-serif text-[1.6rem] leading-[1.5] md:text-[1.9rem]">첫 방문 웰컴 혜택</h2>
             <p className="mt-5 leading-[1.9] text-paper/85">

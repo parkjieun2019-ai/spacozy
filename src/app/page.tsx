@@ -52,8 +52,11 @@ export default function Home() {
                 {site.director.years}년의 정교한 노하우로 속을 비우고, 본연의 맑음을 채우는 곳 · 스파코지
               </p>
             </div>
-            <div className="fade-up flex flex-col gap-3 [animation-delay:.45s] sm:flex-row">
-              <Button href={site.links.booking}>첫 방문 웰컴 혜택 예약하기</Button>
+            <div className="fade-up flex flex-col gap-4 [animation-delay:.45s] sm:items-center">
+              <Button href={site.links.booking}>예약하기</Button>
+              <Link href="/membership#welcome" className="w-fit border-b border-accent/70 pb-0.5 text-[0.92rem] font-semibold text-accent transition-colors hover:text-primary">
+                첫 방문 혜택 보기 →
+              </Link>
             </div>
           </div>
         </Container>
