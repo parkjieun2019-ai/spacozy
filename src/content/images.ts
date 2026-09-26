@@ -7,14 +7,12 @@ const unsplash = (id: string, w = 1200) =>
   `https://images.unsplash.com/photo-${id}?w=${w}&q=75&auto=format&fit=crop`;
 
 export const images = {
-  hero: unsplash("1639162906614-0603b0ae95fd", 1100), // TODO: 매장 관리실 대표 사진
   // 메인 슬라이드 (TODO: 실제 매장·관리 사진으로 교체)
   heroSlides: [
     { src: unsplash("1639162906614-0603b0ae95fd", 1800), caption: "Full Body Balance" },
     { src: unsplash("1570172619644-dfd03ed5d881", 1800), caption: "Face Line Design" },
     { src: unsplash("1544161515-4ab6ce6db874", 1800), caption: "Aroma Relaxing" },
   ],
-  director: unsplash("1643684391140-c5056cfd3436", 900), // TODO: 대표원장 김명숙 사진
   // ⚠ 임시 인물 사진 — 공개(배포) 전 반드시 실제 사진으로 교체 (manager-temp는 pngtree 워터마크 스톡 이미지)
   directorStory: asset("/images/director-temp.png"), // TODO: 대표원장 김명숙 실제 사진
   manager: asset("/images/manager-temp.png"), // TODO: 실장 켈리 실제 사진
@@ -22,9 +20,6 @@ export const images = {
     balance: unsplash("1741522509438-a120c0bb5e88"),
     "face-line": unsplash("1706795033728-9232ef548a16"),
   } as Record<string, string>,
-  spaceRoom: unsplash("1700142360825-d21edc53c8db"), // TODO: 프라이빗 관리실
-  spaceLobby: unsplash("1596748176765-08b3a6c9969a", 700), // TODO: 로비
-  spaceTea: unsplash("1616371041303-a468ea826828", 700), // TODO: 웰컴 티
   // 공간 사진첩 (TODO: 실제 매장 사진으로 교체 — 관리실·로비·웰컴 티 등)
   spaceGallery: [
     { src: unsplash("1700142360825-d21edc53c8db", 1600), caption: "프라이빗 관리실" },
