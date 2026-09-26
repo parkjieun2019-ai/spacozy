@@ -2,8 +2,7 @@
 
 // 네이버 예약 (스파코지 예약 페이지)
 const NAVER_BOOKING_URL = "https://m.booking.naver.com/booking/13/bizes/857141";
-// TODO: 카카오톡 채널 개설 후 채널 ID(예: _xxxxx) 입력
-const KAKAO_CHANNEL_ID = "";
+const KAKAO_CHANNEL_ID = "_TDWqG"; // 카카오톡 채널 "스파코지" (pf.kakao.com/_TDWqG)
 const NAVER_TALK_ID = "w4c605"; // 스파코지 네이버 플레이스에 등록된 톡톡 (talk.naver.com/w4c605)
 
 const naverPlaceSearch = "https://map.naver.com/p/entry/place/36561423";
