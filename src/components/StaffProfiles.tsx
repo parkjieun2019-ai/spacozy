@@ -13,7 +13,6 @@ const consultHref = site.links.kakaoChat || site.links.tel;
 export default function StaffProfiles() {
   const [active, setActive] = useState(0);
   const touchX = useRef<number | null>(null);
-  const s = staff[active];
 
   const go = (i: number) => {
     setActive((i + staff.length) % staff.length);
@@ -27,7 +26,9 @@ export default function StaffProfiles() {
           {staff.map((p, i) => (
             <button
               key={p.id}
+              id={`staff-tab-${p.id}`}
               role="tab"
+              aria-controls={`staff-panel-${p.id}`}
               aria-selected={i === active}
               onClick={() => go(i)}
               className={`relative px-3 py-4 text-[0.98rem] transition-colors md:px-6 md:text-[1.05rem] ${
@@ -60,78 +61,84 @@ export default function StaffProfiles() {
         </div>
       </div>
 
-      {/* 프로필 */}
-      <div
-        key={s.id}
-        className="fade-up mt-8 grid items-center gap-7 md:mt-12 md:grid-cols-[1.05fr_1fr] md:gap-14"
-        onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
-        onTouchEnd={(e) => {
-          if (touchX.current === null) return;
-          const dx = e.changedTouches[0].clientX - touchX.current;
-          if (Math.abs(dx) > 50) go(active + (dx < 0 ? 1 : -1));
-          touchX.current = null;
-        }}
-      >
-        {/* 사진: 뒤에 큰 'Cozy,' 글자 */}
-        <div className="relative h-[330px] overflow-hidden rounded-[18px] bg-[#ede7d9] sm:h-[420px] md:h-[560px]">
-          <p
-            aria-hidden
-            className="pointer-events-none absolute -left-2 top-4 select-none font-display text-[7rem] italic leading-none text-ink/[0.07] md:-left-4 md:top-8 md:text-[12rem]"
-          >
-            Cozy,
-          </p>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={s.photo}
-            alt={`${s.role} ${s.name}`}
-            className="relative h-full w-full object-cover mix-blend-multiply"
-            style={{ objectPosition: s.photoFocus, scale: String(s.photoZoom), transformOrigin: s.photoFocus }}
-          />
-        </div>
-
-        {/* 글 */}
-        <div>
-          <p className="font-display text-[1.05rem] italic text-accent">SPA COZY&apos;s {s.roleEn}</p>
-          <h3 className="mt-2 flex items-baseline gap-2 font-serif text-ink">
-            <span className="text-[2rem] font-semibold tracking-[0.03em] md:text-[2.4rem]">{s.name}</span>
-            <span className="text-[1.05rem] text-muted">{s.role}</span>
-          </h3>
-          <p className="mt-3 inline-flex rounded-full bg-mist px-3 py-1 text-[0.85rem] font-semibold text-primary">{s.career}</p>
-          <p className="mt-5 font-serif text-[1.3rem] font-semibold leading-[1.5] text-primary md:text-[1.5rem]">{s.headline}</p>
-          <p className="mt-3 leading-[1.85] text-ink/75">{s.intro}</p>
-
-          <div className="mt-5 flex flex-wrap items-center gap-1.5">
-            <span className="mr-1 text-[0.85rem] font-semibold text-ink">전문 분야</span>
-            {s.specialties.map((t) => (
-              <span key={t} className="rounded-full border border-line px-3 py-1 text-[0.85rem] text-ink/80">
-                {t}
-              </span>
-            ))}
+      {/* 프로필 — 모든 담당자를 미리 그려 두고(hidden) 선택된 사람만 보여줍니다. 검색엔진·AI 도구도 전부 읽을 수 있어요. */}
+      {staff.map((s, idx) => (
+        <div
+          key={s.id}
+          role="tabpanel"
+          id={`staff-panel-${s.id}`}
+          aria-labelledby={`staff-tab-${s.id}`}
+          hidden={idx !== active}
+          className="fade-up mt-8 grid items-center gap-7 md:mt-12 md:grid-cols-[1.05fr_1fr] md:gap-14"
+          onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
+          onTouchEnd={(e) => {
+            if (touchX.current === null) return;
+            const dx = e.changedTouches[0].clientX - touchX.current;
+            if (Math.abs(dx) > 50) go(active + (dx < 0 ? 1 : -1));
+            touchX.current = null;
+          }}
+        >
+          {/* 사진: 뒤에 큰 Cozy, 글자 */}
+          <div className="relative h-[330px] overflow-hidden rounded-[18px] bg-[#ede7d9] sm:h-[420px] md:h-[560px]">
+            <p
+              aria-hidden
+              className="pointer-events-none absolute -left-2 top-4 select-none font-display text-[7rem] italic leading-none text-ink/[0.07] md:-left-4 md:top-8 md:text-[12rem]"
+            >
+              Cozy,
+            </p>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={s.photo}
+              alt={`${s.role} ${s.name}`}
+              className="relative h-full w-full object-cover mix-blend-multiply"
+              style={{ objectPosition: s.photoFocus, scale: String(s.photoZoom), transformOrigin: s.photoFocus }}
+            />
           </div>
 
-          <Link href="/story#therapists" className="mt-5 inline-flex items-center gap-2 border-b border-ink/60 pb-0.5 text-[0.92rem] font-semibold text-ink">
-            자세한 프로필 보기 <span aria-hidden>→</span>
-          </Link>
+          {/* 글 */}
+          <div>
+            <p className="font-display text-[1.05rem] italic text-accent">SPA COZY&apos;s {s.roleEn}</p>
+            <h3 className="mt-2 flex items-baseline gap-2 font-serif text-ink">
+              <span className="text-[2rem] font-semibold tracking-[0.03em] md:text-[2.4rem]">{s.name}</span>
+              <span className="text-[1.05rem] text-muted">{s.role}</span>
+            </h3>
+            <p className="mt-3 inline-flex rounded-full bg-mist px-3 py-1 text-[0.85rem] font-semibold text-primary">{s.career}</p>
+            <p className="mt-5 font-serif text-[1.3rem] font-semibold leading-[1.5] text-primary md:text-[1.5rem]">{s.headline}</p>
+            <p className="mt-3 leading-[1.85] text-ink/75">{s.intro}</p>
 
-          <div className="mt-7 grid grid-cols-2 gap-2">
-            <a
-              href={s.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex min-h-13 items-center justify-center bg-primary text-[0.95rem] font-semibold text-paper transition-colors hover:bg-primary-soft"
-            >
-              예약하기
-            </a>
-            <a
-              href={consultHref}
-              {...(consultHref.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="flex min-h-13 items-center justify-center border border-primary text-[0.95rem] font-semibold text-primary transition-colors hover:bg-primary hover:text-paper"
-            >
-              상담
-            </a>
+            <div className="mt-5 flex flex-wrap items-center gap-1.5">
+              <span className="mr-1 text-[0.85rem] font-semibold text-ink">전문 분야</span>
+              {s.specialties.map((t) => (
+                <span key={t} className="rounded-full border border-line px-3 py-1 text-[0.85rem] text-ink/80">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <Link href="/story#therapists" className="mt-5 inline-flex items-center gap-2 border-b border-ink/60 pb-0.5 text-[0.92rem] font-semibold text-ink">
+              자세한 프로필 보기 <span aria-hidden>→</span>
+            </Link>
+
+            <div className="mt-7 grid grid-cols-2 gap-2">
+              <a
+                href={s.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-13 items-center justify-center bg-primary text-[0.95rem] font-semibold text-paper transition-colors hover:bg-primary-soft"
+              >
+                예약하기
+              </a>
+              <a
+                href={consultHref}
+                {...(consultHref.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="flex min-h-13 items-center justify-center border border-primary text-[0.95rem] font-semibold text-primary transition-colors hover:bg-primary hover:text-paper"
+              >
+                상담
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }
