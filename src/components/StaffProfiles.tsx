@@ -69,7 +69,7 @@ export default function StaffProfiles() {
           id={`staff-panel-${s.id}`}
           aria-labelledby={`staff-tab-${s.id}`}
           hidden={idx !== active}
-          className="fade-up mt-8 grid items-center gap-7 md:mt-12 md:grid-cols-[1.05fr_1fr] md:gap-14"
+          className="fade-up mt-8 grid items-start gap-7 md:mt-12 md:grid-cols-[auto_1fr] md:gap-10"
           onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
           onTouchEnd={(e) => {
             if (touchX.current === null) return;
@@ -78,21 +78,17 @@ export default function StaffProfiles() {
             touchX.current = null;
           }}
         >
-          {/* 사진: 뒤에 큰 Cozy, 글자 */}
-          <div className="relative h-[330px] overflow-hidden rounded-[18px] bg-[#ede7d9] sm:h-[420px] md:h-[560px]">
-            <p
-              aria-hidden
-              className="pointer-events-none absolute -left-2 top-4 select-none font-display text-[7rem] italic leading-none text-ink/[0.07] md:-left-4 md:top-8 md:text-[12rem]"
-            >
-              Cozy,
-            </p>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={s.photo}
-              alt={`${s.role} ${s.name}`}
-              className="relative h-full w-full object-cover mix-blend-multiply"
-              style={{ objectPosition: s.photoFocus, scale: String(s.photoZoom), transformOrigin: s.photoFocus }}
-            />
+          {/* 사진: 잡지 연출 없이, 프로필 사진처럼 동그랗고 깔끔하게 */}
+          <div className="flex justify-center md:justify-start">
+            <div className="h-[220px] w-[220px] overflow-hidden rounded-full bg-mist shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)] ring-4 ring-paper sm:h-[260px] sm:w-[260px] md:h-[300px] md:w-[300px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={s.photo}
+                alt={`${s.role} ${s.name}`}
+                className="h-full w-full object-cover"
+                style={{ objectPosition: s.photoFocus, scale: String(s.photoZoom), transformOrigin: s.photoFocus }}
+              />
+            </div>
           </div>
 
           {/* 글 */}
