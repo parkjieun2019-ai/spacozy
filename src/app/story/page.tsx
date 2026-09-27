@@ -59,9 +59,24 @@ export default function StoryPage() {
             </div>
             <div className="mt-12 text-right">
               <p className="text-muted">대표원장</p>
-              {/* TODO: 자필 서명 이미지로 교체 (public/images/signature.png) */}
-              <p className="mt-1 font-serif text-[2rem] italic tracking-[0.06em] text-primary">{site.director.name}</p>
-              <p className="text-muted">올림</p>
+              <p
+                className="mt-1 -rotate-2 text-[3.2rem] leading-none text-primary"
+                style={{ fontFamily: "var(--font-signature)" }}
+              >
+                {site.director.name}
+              </p>
+              <svg
+                className="ml-auto mt-1 h-3 w-32 text-accent"
+                viewBox="0 0 130 14"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                aria-hidden
+              >
+                <path d="M2 8c14-8 26 8 40 2s24-9 40-3 30 5 46-2" />
+              </svg>
+              <p className="mt-1 text-muted">올림</p>
             </div>
 
             <div className="mt-16 border-t border-line pt-12">
