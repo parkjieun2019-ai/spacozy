@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Button, Container, Eyebrow, PageHero } from "@/components/ui";
 import { faqs } from "@/content/faq";
+import { images } from "@/content/images";
 import { site } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -81,16 +82,24 @@ export default function FaqPage() {
             href={site.links.map}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex min-h-80 items-center justify-center overflow-hidden rounded-[2px] bg-gradient-to-br from-mist via-line to-[#cbb89a]"
+            className="group relative flex min-h-80 items-end overflow-hidden rounded-[2px] bg-mist"
             aria-label="네이버 지도에서 스파코지 위치 보기"
           >
-            <div className="absolute inset-0 opacity-40 [background:repeating-linear-gradient(45deg,transparent_0_22px,#fff3_22px_23px)]" />
-            <div className="relative text-center">
-              <svg className="mx-auto h-12 w-12 text-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={images.exterior}
+              alt="죽전누리에뜰 상가 외관과 주차장 입구 — 스파코지 간판"
+              className="absolute inset-0 h-full w-full object-cover object-[88%_center] transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+            <div className="relative flex items-center gap-3 p-6 text-paper">
+              <svg className="h-9 w-9 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                 <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" />
               </svg>
-              <p className="mt-3 font-serif text-[1.15rem] text-primary">죽전누리에뜰 B동 2층</p>
-              <p className="mt-1 text-sm text-ink/60 group-hover:underline">눌러서 네이버 지도 열기</p>
+              <div>
+                <p className="font-serif text-[1.15rem]">죽전누리에뜰 B동 2층</p>
+                <p className="mt-0.5 text-sm text-paper/80 group-hover:underline">눌러서 네이버 지도 열기</p>
+              </div>
             </div>
           </a>
         </Container>
