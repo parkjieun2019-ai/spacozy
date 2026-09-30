@@ -78,19 +78,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 3. 관리 장면 — 실제 관리 영상 짧은 클립 */}
-      <section className="bg-mist/60 py-24 md:py-32">
-        <Container>
-          <SectionTitle en="In the Room" sub="스파코지의 관리는 이렇게 진행됩니다. 실제 관리 장면을 짧게 담았어요.">
-            손끝에서 시작되는 시간
-          </SectionTitle>
-          <div className="mt-12 md:mt-16">
-            <SceneClips />
-          </div>
-        </Container>
-      </section>
-
-      {/* 4. Intro */}
+      {/* 3. Intro */}
       <section className="py-28 md:py-44">
         <Container className="max-w-3xl text-center">
           <p className="reveal font-display text-[1.2rem] italic tracking-[0.06em] text-accent">Since {site.director.since} · Private Beauty Ritual</p>
@@ -140,6 +128,18 @@ export default function Home() {
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* 5-1. 관리 장면 — 실제 관리 영상 짧은 클립 (시그니처 바로 아래) */}
+      <section className="bg-mist/60 py-24 md:py-32">
+        <Container>
+          <SectionTitle en="In the Room" sub="스파코지의 관리는 이렇게 진행됩니다. 실제 관리 장면을 짧게 담았어요.">
+            손끝에서 시작되는 시간
+          </SectionTitle>
+          <div className="mt-12 md:mt-16">
+            <SceneClips />
+          </div>
+        </Container>
       </section>
 
       {/* 6. 고민별 — 탭을 누르면 추천이 바뀜 */}
