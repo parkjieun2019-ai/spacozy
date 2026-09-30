@@ -19,7 +19,7 @@ export const images = {
   signature: asset("/images/signature.png"),
   // 프로그램 페이지(/programs) 큰 사진
   programs: {
-    balance: asset("/images/program-balance.jpg"), // 실제 관리 영상에서 추출 (어깨 수기 관리)
+    balance: asset("/images/hero-1.jpg"), // 메인 슬라이드의 등 관리 사진과 동일 (사용자 요청)
     "face-line": asset("/images/program-face-line.jpg"), // 사용자 제공 이미지(턱선·목, 하단 문구 잘라내고 목 피부 보정)
   } as Record<string, string>,
   // 고민별 추천 카드 썸네일 — 세부 프로그램 이름(menu.ts)별로 코스에 어울리는 무료 사진(Unsplash). 없으면 시그니처 사진으로 대체
