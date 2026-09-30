@@ -50,6 +50,32 @@ type BtnProps = {
   className?: string;
 };
 
+/** 네이버 예약으로 이동하는 버튼임을 알려주는 초록 N 마크 */
+export function NaverMark({ className = "" }: { className?: string }) {
+  return (
+    <span
+      className={`inline-flex h-[1.15em] w-[1.15em] shrink-0 items-center justify-center rounded-[3px] bg-[#03c75a] font-display text-[0.72em] font-bold leading-none text-white ${className}`}
+      aria-hidden
+    >
+      N
+    </span>
+  );
+}
+
+/** 카카오톡 상담으로 이동하는 버튼임을 알려주는 노란 말풍선 마크 */
+export function KakaoMark({ className = "" }: { className?: string }) {
+  return (
+    <span
+      className={`inline-flex h-[1.15em] w-[1.15em] shrink-0 items-center justify-center rounded-[3px] bg-[#fee500] text-[#191919] ${className}`}
+      aria-hidden
+    >
+      <svg viewBox="0 0 24 24" className="h-[0.8em] w-[0.8em]" fill="currentColor">
+        <path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7L5.8 21l4-2.5c.7.1 1.4.2 2.2.2 5.5 0 10-3.6 10-8S17.5 3 12 3Z" />
+      </svg>
+    </span>
+  );
+}
+
 export function Button({ href, children, variant = "solid", external, className = "" }: BtnProps) {
   const styles = {
     solid: "bg-primary text-paper shadow-sm shadow-primary/20 hover:bg-primary-soft hover:shadow-md hover:shadow-primary/25",

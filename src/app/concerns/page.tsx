@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Button, Container, PageHero } from "@/components/ui";
+import { Button, Container, NaverMark, PageHero } from "@/components/ui";
 import ConcernTabs from "@/components/ConcernTabs";
 import { site } from "@/config/site";
 
@@ -29,7 +29,9 @@ export default function ConcernsPage() {
           <div className="mt-16 text-center">
             <p className="mb-6 text-muted">내 고민이 목록에 없어도 괜찮아요. 편하게 물어보세요.</p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
-              <Button href={site.links.booking}>상담 예약하기</Button>
+              <Button href={site.links.booking}>
+                <NaverMark /> 네이버 예약하기
+              </Button>
               <Button href={site.links.tel} variant="outline">
                 전화 문의 {site.phone}
               </Button>

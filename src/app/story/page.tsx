@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Button, Container, Eyebrow, PageHero, Photo, SectionTitle } from "@/components/ui";
+import { Button, Container, Eyebrow, NaverMark, PageHero, Photo, SectionTitle } from "@/components/ui";
 import StaffDetails from "@/components/StaffDetails";
 import ScrollToHash from "@/components/ScrollToHash";
 import { site } from "@/config/site";
@@ -117,7 +117,9 @@ export default function StoryPage() {
             ))}
           </ol>
           <div className="mt-12">
-            <Button href={site.links.booking}>첫 방문 예약하기</Button>
+            <Button href={site.links.booking}>
+              <NaverMark /> 네이버 예약으로 첫 방문 예약
+            </Button>
           </div>
         </Container>
       </section>

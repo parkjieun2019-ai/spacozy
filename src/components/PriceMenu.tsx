@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { menu, won } from "@/content/menu";
 import { site } from "@/config/site";
+import { NaverMark } from "@/components/ui";
 
 /**
  * 카테고리 탭 + 세부 프로그램 가격표
@@ -97,9 +98,9 @@ export default function PriceMenu({ ids }: { ids?: string[] }) {
                       href={cat.bookingUrl ?? site.links.booking}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="shrink-0 border border-primary px-4 py-2 text-[0.88rem] font-semibold text-primary transition-colors hover:bg-primary hover:text-paper"
+                      className="inline-flex shrink-0 items-center gap-1.5 border border-primary px-3.5 py-2 text-[0.88rem] font-semibold text-primary transition-colors hover:bg-primary hover:text-paper"
                     >
-                      예약
+                      <NaverMark /> 예약
                     </a>
                   </div>
                 </li>

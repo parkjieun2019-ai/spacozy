@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/config/site";
+import { NaverMark } from "@/components/ui";
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
@@ -60,9 +61,9 @@ export default function Header() {
             href={site.links.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-primary px-6 py-2.5 text-[0.9rem] tracking-[0.08em] text-primary transition-colors duration-500 hover:bg-primary hover:text-paper"
+            className="inline-flex items-center gap-2 border border-primary px-5 py-2.5 text-[0.9rem] tracking-[0.08em] text-primary transition-colors duration-500 hover:bg-primary hover:text-paper"
           >
-            예약하기
+            <NaverMark /> 네이버 예약
           </a>
         </nav>
 
@@ -128,9 +129,9 @@ export default function Header() {
                 href={site.links.booking}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-13 items-center justify-center bg-primary text-[1rem] font-semibold text-paper"
+                className="flex min-h-13 items-center justify-center gap-2 bg-primary text-[1rem] font-semibold text-paper"
               >
-                네이버 예약하기
+                <NaverMark /> 네이버 예약하기
               </a>
               <a href={site.links.tel} className="flex min-h-13 items-center justify-center border border-primary text-[1rem] font-semibold text-primary">
                 {site.phone}

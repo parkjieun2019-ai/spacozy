@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Button, Container, Eyebrow, PageHero, SectionTitle } from "@/components/ui";
+import { Button, Container, Eyebrow, NaverMark, PageHero, SectionTitle } from "@/components/ui";
 import { NAVER_BOOKING_ITEMS, site } from "@/config/site";
 import { membershipTiers } from "@/content/membership";
 
@@ -28,7 +28,7 @@ export default function MembershipPage() {
             </p>
             <div className="mt-auto pt-10">
               <Button href={site.links.booking} variant="light">
-                웰컴 혜택 확인하고 예약하기
+                <NaverMark /> 네이버 예약에서 웰컴 혜택 받기
               </Button>
             </div>
           </article>

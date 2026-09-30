@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { staff } from "@/content/staff";
 import { site } from "@/config/site";
+import { KakaoMark, NaverMark } from "@/components/ui";
 
 
 // 상담 버튼: 카카오톡 비즈니스 채널 1:1 채팅 (채널 ID는 src/config/site.ts, 입력 전에는 전화로 연결)
@@ -135,16 +136,16 @@ export default function StaffProfiles() {
                 href={s.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-13 items-center justify-center bg-primary text-[0.95rem] font-semibold text-paper transition-colors hover:bg-primary-soft"
+                className="flex min-h-13 items-center justify-center gap-1.5 bg-primary text-[0.95rem] font-semibold text-paper transition-colors hover:bg-primary-soft"
               >
-                예약하기
+                <NaverMark /> 네이버 예약
               </a>
               <a
                 href={consultHref}
                 {...(consultHref.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="flex min-h-13 items-center justify-center border border-primary text-[0.95rem] font-semibold text-primary transition-colors hover:bg-primary hover:text-paper"
+                className="flex min-h-13 items-center justify-center gap-1.5 border border-primary text-[0.95rem] font-semibold text-primary transition-colors hover:bg-primary hover:text-paper"
               >
-                상담
+                <KakaoMark /> 카톡 상담
               </a>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button, Container, Eyebrow, SectionTitle, ViewMore } from "@/components/ui";
+import { Button, Container, Eyebrow, NaverMark, SectionTitle, ViewMore } from "@/components/ui";
 import { programs } from "@/content/programs";
 import ConcernTabs from "@/components/ConcernTabs";
 import HeroSlider from "@/components/HeroSlider";
@@ -54,7 +54,9 @@ export default function Home() {
               </p>
             </div>
             <div className="fade-up flex flex-col gap-4 [animation-delay:.45s] sm:items-center">
-              <Button href={site.links.booking}>예약하기</Button>
+              <Button href={site.links.booking}>
+                <NaverMark /> 네이버 예약
+              </Button>
               <Link href="/membership#welcome" className="w-fit border-b border-accent/70 pb-0.5 text-[0.92rem] font-semibold text-accent transition-colors hover:text-primary">
                 첫 방문 혜택 보기 →
               </Link>

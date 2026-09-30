@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Button, Container, Eyebrow, PageHero, Photo, SectionTitle } from "@/components/ui";
+import { Button, Container, Eyebrow, NaverMark, PageHero, Photo, SectionTitle } from "@/components/ui";
 import PriceMenu from "@/components/PriceMenu";
 import { formatPrice, programs } from "@/content/programs";
 import { categoriesOf, priceRange } from "@/content/menu";
@@ -46,7 +46,9 @@ export default function ProgramsPage() {
                   </dl>
 
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <Button href={p.bookingUrl ?? site.links.booking}>이 프로그램 예약하기</Button>
+                    <Button href={p.bookingUrl ?? site.links.booking}>
+                      <NaverMark /> 네이버 예약으로 이 프로그램 예약
+                    </Button>
                     <Button href={`#${p.slug}-price`} variant="outline">
                       세부 프로그램 · 가격
                     </Button>
