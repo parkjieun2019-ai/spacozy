@@ -20,7 +20,7 @@ export const images = {
   // 프로그램 페이지(/programs) 큰 사진
   programs: {
     balance: asset("/images/program-balance.jpg"), // 실제 관리 영상에서 추출 (어깨 수기 관리)
-    "face-line": unsplash("1686350751264-1d3f6e41a6e6"), // 무료 사진(Unsplash) — 한국인 여성 앞모습, 눈 감고 두 손으로 얼굴선 감쌈
+    "face-line": asset("/images/program-face-line.jpg"), // 사용자 제공 이미지(턱선·목, 하단 문구 잘라내고 목 피부 보정)
   } as Record<string, string>,
   // 홈 시그니처 타일 배경 (사용자 요청: 기존 사진 유지)
   programTiles: {
