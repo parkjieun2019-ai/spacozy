@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Button, Container, Eyebrow, PageHero, SectionTitle } from "@/components/ui";
-import { site } from "@/config/site";
+import { NAVER_BOOKING_ITEMS, site } from "@/config/site";
 import { membershipTiers } from "@/content/membership";
 
 export const metadata: Metadata = {
@@ -57,6 +57,16 @@ export default function MembershipPage() {
               <Button href={site.links.tel} variant="outline">
                 멤버십 문의 {site.phone}
               </Button>
+              {/* 이미 회원인 분 — 네이버 예약의 회원 전용 상품으로 바로 */}
+              <p className="mt-5 text-[0.85rem] text-muted">이미 회원이신가요? 회원 전용 예약으로 바로 가기</p>
+              <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-[0.92rem] font-semibold">
+                <a href={NAVER_BOOKING_ITEMS.memberSkin} target="_blank" rel="noopener noreferrer" className="border-b border-primary/60 text-primary">
+                  회원 피부 관리 예약 →
+                </a>
+                <a href={NAVER_BOOKING_ITEMS.memberBody} target="_blank" rel="noopener noreferrer" className="border-b border-primary/60 text-primary">
+                  회원 바디 · 전신 예약 →
+                </a>
+              </div>
             </div>
           </article>
         </Container>

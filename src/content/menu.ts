@@ -23,13 +23,18 @@ export type MenuCategory = {
   note?: string;
   /** 어느 시그니처 프로그램에 속하는지 (programs.ts 의 slug) */
   signature?: string;
+  /** 이 카테고리의 네이버 예약 상품 바로가기 (없으면 예약 첫 화면) */
+  bookingUrl?: string;
   items: MenuItem[];
 };
+
+import { NAVER_BOOKING_ITEMS } from "@/config/site";
 
 export const menu: MenuCategory[] = [
   {
     id: "face",
     signature: "face-line",
+    bookingUrl: NAVER_BOOKING_ITEMS.skinFirst,
     name: "페이셜",
     nameEn: "Facial",
     desc: "피부 컨디션에 맞춘 맞춤 피부 관리",
@@ -46,6 +51,7 @@ export const menu: MenuCategory[] = [
   {
     id: "contour",
     signature: "face-line",
+    bookingUrl: NAVER_BOOKING_ITEMS.skinFirst,
     name: "윤곽 · 리프팅",
     nameEn: "Contour",
     desc: "얼굴선과 탄력을 위한 관리",
@@ -57,6 +63,7 @@ export const menu: MenuCategory[] = [
   {
     id: "body",
     signature: "balance",
+    bookingUrl: NAVER_BOOKING_ITEMS.bodyFirst,
     name: "바디",
     nameEn: "Body",
     desc: "뭉친 몸을 풀고 순환을 돕는 수기 중심 바디 관리",
@@ -72,6 +79,7 @@ export const menu: MenuCategory[] = [
   },
   {
     id: "wedding",
+    bookingUrl: NAVER_BOOKING_ITEMS.skinFirst,
     name: "웨딩",
     nameEn: "Wedding",
     desc: "혼주 · 예비신부 · 가족 동반 관리",

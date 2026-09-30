@@ -2,6 +2,13 @@
 
 // 네이버 예약 (스파코지 예약 페이지)
 const NAVER_BOOKING_URL = "https://m.booking.naver.com/booking/13/bizes/857141";
+// 네이버 예약 "상품(biz-item)"별 바로가기 — 네이버 예약에는 상품 4개가 있고, 그 아래에 세부 옵션(20개)이 붙어 있음
+export const NAVER_BOOKING_ITEMS = {
+  skinFirst: `${NAVER_BOOKING_URL}/items/4908755`, // 첫방문 1인 1회 피부관리 (비회원)
+  bodyFirst: `${NAVER_BOOKING_URL}/items/6936621`, // 첫방문 1인 1회 부분·바디관리 (비회원)
+  memberSkin: `${NAVER_BOOKING_URL}/items/5190145`, // 회원권·정액권 피부관리 (회원 전용)
+  memberBody: `${NAVER_BOOKING_URL}/items/6937201`, // 회원권·정액권 바디·전신관리 (회원 전용)
+} as const;
 const KAKAO_CHANNEL_ID = "_TDWqG"; // 카카오톡 채널 "스파코지" (pf.kakao.com/_TDWqG)
 const NAVER_TALK_ID = "w4c605"; // 스파코지 네이버 플레이스에 등록된 톡톡 (talk.naver.com/w4c605)
 

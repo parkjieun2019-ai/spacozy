@@ -1,4 +1,5 @@
 // 프로그램 데이터 — 2단계에서 Supabase `programs` 테이블로 옮길 구조입니다.
+import { NAVER_BOOKING_ITEMS } from "@/config/site";
 
 export type ProgramStep = { title: string; desc: string };
 
@@ -36,6 +37,7 @@ export const programs: Program[] = [
     durationLabel: "40 ~ 90분 (프로그램별)",
     durationMinutes: 90,
     price: null,
+    bookingUrl: NAVER_BOOKING_ITEMS.bodyFirst, // 네이버 예약 "첫방문 부분·바디관리" 상품으로 바로
     published: true,
   },
   {
@@ -56,6 +58,7 @@ export const programs: Program[] = [
     durationLabel: "70 ~ 90분 (프로그램별)",
     durationMinutes: 80,
     price: null,
+    bookingUrl: NAVER_BOOKING_ITEMS.skinFirst, // 네이버 예약 "첫방문 피부관리" 상품으로 바로
     published: true,
   },
 ];

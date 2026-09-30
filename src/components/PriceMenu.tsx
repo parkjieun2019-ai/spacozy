@@ -94,7 +94,7 @@ export default function PriceMenu({ ids }: { ids?: string[] }) {
                       ) : null}
                     </dl>
                     <a
-                      href={site.links.booking}
+                      href={cat.bookingUrl ?? site.links.booking}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="shrink-0 border border-primary px-4 py-2 text-[0.88rem] font-semibold text-primary transition-colors hover:bg-primary hover:text-paper"
