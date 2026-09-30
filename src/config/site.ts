@@ -21,12 +21,12 @@ export const site = {
   phoneNaver: "0507-1490-9595",
   hours: [
     { day: "월 – 금", time: "09:30 – 20:00" },
-    { day: "토요일", time: "09:30 – 17:00" },
+    { day: "토요일", time: "09:30 – 20:00" },
     { day: "일요일", time: "정기 휴무" },
   ],
   director: { name: "김명숙", since: 2006, years: 20 },
   manager: { name: "켈리", years: "10년 이상" },
-  // TODO: 대표자·사업자등록번호 확인 후 입력
+  // 사업자등록번호는 안내용 홈페이지(사이트 내 결제 없음)라 표시 의무가 없어 비워 둠 — 넣고 싶으면 registration 에 "000-00-00000" 형식으로 입력하면 푸터에 표시됨
   business: { owner: "김명숙", registration: "" },
   instagram: "", // TODO
   links: {
