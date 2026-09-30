@@ -3,7 +3,7 @@ import { asset } from "@/lib/asset";
 // 홈 "관리 장면" — 실제 관리 영상에서 잘라낸 짧은 무음 루프 클립 (public/videos/, 원본은 _자료/)
 const clips = [
   { src: asset("/videos/clip-shoulder.mp4"), poster: asset("/videos/clip-shoulder.jpg"), en: "Shoulder & Back", title: "어깨 · 등 수기 관리", desc: "굳은 어깨의 결을 따라 천천히 풀어냅니다" },
-  { src: asset("/videos/clip-decollete.mp4"), poster: asset("/videos/clip-decollete.jpg"), en: "Neck & Décolleté", title: "목 · 데콜테 관리", desc: "얼굴선의 시작, 목과 데콜테부터 열어 줍니다" },
+  { src: asset("/videos/clip-decollete.mp4"), poster: asset("/videos/clip-decollete.jpg"), en: "Shoulder & Décolleté", title: "어깨 · 데콜테 관리", desc: "굳은 어깨선을 풀고 데콜테까지 이어 갑니다" },
   { src: asset("/videos/clip-face.mp4"), poster: asset("/videos/clip-face.jpg"), en: "Face Line", title: "페이스 라인 관리", desc: "부드러운 롤링으로 얼굴의 선을 정돈합니다" },
 ];
 
