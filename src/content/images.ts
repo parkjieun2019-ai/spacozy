@@ -7,11 +7,11 @@ const unsplash = (id: string, w = 1200) =>
   `https://images.unsplash.com/photo-${id}?w=${w}&q=75&auto=format&fit=crop`;
 
 export const images = {
-  // 메인 슬라이드 (TODO: 실제 매장·관리 사진으로 교체)
+  // 메인 슬라이드 — 사용자 제공 이미지 (원본은 _자료/hero-*-원본.webp). focus: 휴대폰 세로 크롭 시 보여줄 가로 위치
   heroSlides: [
-    { src: unsplash("1639162906614-0603b0ae95fd", 1800), caption: "Full Body Balance" },
-    { src: unsplash("1570172619644-dfd03ed5d881", 1800), caption: "Face Line Design" },
-    { src: unsplash("1544161515-4ab6ce6db874", 1800), caption: "Aroma Relaxing" },
+    { src: asset("/images/hero-1.jpg"), caption: "Full Body Balance", focus: "62% 50%" },
+    { src: asset("/images/hero-2.jpg"), caption: "Face Line Design", focus: "68% 50%" },
+    { src: asset("/images/hero-3.jpg"), caption: "Aroma Relaxing", focus: "50% 50%" },
   ],
   // ⚠ 임시 인물 사진 — 공개(배포) 전 반드시 실제 사진으로 교체
   directorStory: asset("/images/director-temp.webp"), // TODO: 대표원장 실제 사진 (현재는 AI/스톡풍 임시 인물 사진 — 실제 사진 확보 시 교체)

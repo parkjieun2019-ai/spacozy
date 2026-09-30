@@ -36,6 +36,7 @@ export default function HeroSlider() {
               alt={s.caption}
               loading={i === 0 ? "eager" : "lazy"}
               className={`tone-photo h-full w-full object-cover transition-transform ease-out ${on ? "scale-100 duration-[7000ms]" : "scale-110 duration-0"} motion-reduce:scale-100`}
+              style={{ objectPosition: s.focus }}
             />
           </div>
         );
