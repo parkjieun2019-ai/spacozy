@@ -12,7 +12,10 @@ export type Staff = {
   headline: string;
   intro: string;
   specialties: string[];
-  photo: string; // TODO: 실제 사진으로 교체
+  /** 프로필 사진. 없으면 이름 첫 글자로 된 원형 아바타를 보여줍니다. */
+  photo?: string;
+  /** 사진이 없을 때 아바타 배경 톤 */
+  avatarTone?: "primary" | "accent";
   /** 두 사진의 얼굴 크기·위치를 맞추기 위한 값 (사진 교체 시 조정) */
   photoFocus: string;
   photoZoom: number;
@@ -51,9 +54,10 @@ export const staff: Staff[] = [
     headline: "섬세한 손길로, 자연스러운 선을 완성합니다",
     intro: "얼굴선과 바디라인, 부기와 순환을 꼼꼼히 살피고 생활 리듬과 일정에 맞춘 관리를 제안합니다. 편안한 상담을 바탕으로, 부담 없이 오래 이어갈 수 있는 변화를 함께 만들어 갑니다.",
     specialties: ["얼굴선", "윤곽 케어", "부기", "바디라인", "웨딩 관리"],
-    photo: images.manager,
-    photoFocus: "58% 16%",
-    photoZoom: 1.1,
+    // TODO: 실장 켈리 실제 사진 확보 시 photo 추가 (지금은 이니셜 아바타)
+    avatarTone: "accent",
+    photoFocus: "50% 20%",
+    photoZoom: 1,
     quote: "고객님의 이야기를 먼저 듣고, 가장 편안한 관리부터 시작하겠습니다.",
     current: ["스파코지 실장 · 뷰티 큐레이터"],
     history: [`에스테틱 경력 ${site.manager.years}`],

@@ -81,13 +81,28 @@ export default function StaffProfiles() {
           {/* 사진: 잡지 연출 없이, 프로필 사진처럼 동그랗고 깔끔하게 */}
           <div className="flex justify-center md:justify-start">
             <div className="h-[220px] w-[220px] overflow-hidden rounded-full bg-mist shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)] ring-4 ring-paper sm:h-[260px] sm:w-[260px] md:h-[300px] md:w-[300px]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={s.photo}
-                alt={`${s.role} ${s.name}`}
-                className="h-full w-full object-cover"
-                style={{ objectPosition: s.photoFocus, scale: String(s.photoZoom), transformOrigin: s.photoFocus }}
-              />
+              {s.photo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={s.photo}
+                  alt={`${s.role} ${s.name}`}
+                  className="h-full w-full object-cover"
+                  style={{ objectPosition: s.photoFocus, scale: String(s.photoZoom), transformOrigin: s.photoFocus }}
+                />
+              ) : (
+                // 사진이 없을 때: 이름 첫 글자 이니셜 아바타
+                <div
+                  role="img"
+                  aria-label={`${s.role} ${s.name}`}
+                  className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${
+                    s.avatarTone === "primary" ? "from-primary-soft to-primary" : "from-[#c9a76c] via-accent to-[#8f6f3f]"
+                  }`}
+                >
+                  <span className="font-serif text-[5.5rem] font-semibold leading-none text-paper drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)] sm:text-[6.5rem] md:text-[7.5rem]">
+                    {s.name.slice(0, 1)}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 

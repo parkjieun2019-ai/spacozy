@@ -58,24 +58,16 @@ export default function StoryPage() {
               <p>억지로 누르거나 당기지 않고, 몸이 스스로 편안함을 되찾을 수 있도록 곁에서 돕겠습니다.</p>
             </div>
             <div className="mt-12 text-right">
-              <p className="text-muted">대표원장</p>
-              <p
-                className="mt-1 -rotate-2 text-[3.2rem] leading-none text-primary"
-                style={{ fontFamily: "var(--font-signature)" }}
-              >
-                {site.director.name}
+              <p className="text-muted">
+                대표원장 <span className="tracking-[0.04em] text-ink">{site.director.name}</span>
               </p>
-              <svg
-                className="ml-auto mt-1 h-3 w-32 text-accent"
-                viewBox="0 0 130 14"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                aria-hidden
-              >
-                <path d="M2 8c14-8 26 8 40 2s24-9 40-3 30 5 46-2" />
-              </svg>
+              {/* 자필 서명 (public/images/signature.png, 투명 PNG) */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={images.signature}
+                alt={`대표원장 ${site.director.name} 자필 서명`}
+                className="ml-auto mt-2 h-20 w-auto -rotate-1 md:h-24"
+              />
               <p className="mt-1 text-muted">올림</p>
             </div>
 
