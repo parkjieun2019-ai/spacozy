@@ -84,11 +84,13 @@ export default function ConcernTabs() {
                 const found = findMenuItem(name);
                 if (!found) return null;
                 const { item, categoryName } = found;
+                // 코스별 사진이 있으면 그것을, 없으면 시그니처 사진
+                const photo = images.menuPhotos[item.name] ?? images.programs[c.signature];
                 return (
                   <div key={`${c.slug}-${name}`} className="flex overflow-hidden rounded-[14px] border border-line bg-mist/40">
-                    {images.programs[c.signature] && (
+                    {photo && (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={images.programs[c.signature]} alt="" loading="lazy" className="tone-photo w-24 shrink-0 object-cover md:w-32" />
+                      <img src={photo} alt="" loading="lazy" className="tone-photo w-24 shrink-0 object-cover md:w-32" />
                     )}
                     <div className="flex flex-1 flex-col justify-center p-4 md:p-5">
                       <div className="mb-1.5 flex flex-wrap items-center gap-1.5">

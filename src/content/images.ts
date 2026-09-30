@@ -22,6 +22,20 @@ export const images = {
     balance: asset("/images/program-balance.jpg"), // 실제 관리 영상에서 추출 (어깨 수기 관리)
     "face-line": asset("/images/program-face-line.jpg"), // 사용자 제공 이미지(턱선·목, 하단 문구 잘라내고 목 피부 보정)
   } as Record<string, string>,
+  // 고민별 추천 카드 썸네일 — 세부 프로그램 이름(menu.ts)별로 코스에 어울리는 무료 사진(Unsplash). 없으면 시그니처 사진으로 대체
+  menuPhotos: {
+    "등 관리 A코스": unsplash("1519824145371-296894a0daa9", 600),
+    "상체 집중 관리": unsplash("1649751295468-953038600bef", 600),
+    "전신 관리 (피부 제외)": unsplash("1600334129128-685c5582fd35", 600),
+    "하체 집중 관리": unsplash("1675159364615-38e1f6b62282", 600),
+    "에너지테라피 바디 관리": unsplash("1600334089648-b0d9d3028eb2", 600),
+    "V라인 리프팅": unsplash("1741934023052-26baf5535088", 600),
+    "딸고 실리시움 리프트 (탄력)": unsplash("1785852790570-0d2858068c70", 600),
+    "콜라겐 집중 관리": unsplash("1570172619644-dfd03ed5d881", 600),
+    "딸고 콜드크림 마린 (수분·진정)": unsplash("1616394584738-fc6e612e71b9", 600),
+    "여드름 집중 관리": unsplash("1717160675158-fdd75b8595cf", 600),
+    "달팡 시그니처 관리": unsplash("1728727242233-0924178c1fb1", 600),
+  } as Record<string, string>,
   // 홈 시그니처 타일 배경 (사용자 요청: 기존 사진 유지)
   programTiles: {
     balance: unsplash("1741522509438-a120c0bb5e88"),
