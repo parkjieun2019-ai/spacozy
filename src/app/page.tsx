@@ -5,6 +5,7 @@ import ConcernTabs from "@/components/ConcernTabs";
 import HeroSlider from "@/components/HeroSlider";
 import StaffProfiles from "@/components/StaffProfiles";
 import SpaceSection from "@/components/SpaceSection";
+import SceneClips from "@/components/SceneClips";
 import ReviewCards from "@/components/ReviewCards";
 import { site } from "@/config/site";
 import { images } from "@/content/images";
@@ -77,7 +78,19 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 2. Intro */}
+      {/* 3. 관리 장면 — 실제 관리 영상 짧은 클립 */}
+      <section className="bg-mist/60 py-24 md:py-32">
+        <Container>
+          <SectionTitle en="In the Room" sub="스파코지의 관리는 이렇게 진행됩니다. 실제 관리 장면을 짧게 담았어요.">
+            손끝에서 시작되는 시간
+          </SectionTitle>
+          <div className="mt-12 md:mt-16">
+            <SceneClips />
+          </div>
+        </Container>
+      </section>
+
+      {/* 4. Intro */}
       <section className="py-28 md:py-44">
         <Container className="max-w-3xl text-center">
           <p className="reveal font-display text-[1.2rem] italic tracking-[0.06em] text-accent">Since {site.director.since} · Private Beauty Ritual</p>

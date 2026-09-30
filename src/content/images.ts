@@ -19,7 +19,7 @@ export const images = {
   signature: asset("/images/signature.png"),
   programs: {
     balance: asset("/images/program-balance.jpg"), // 실제 관리 영상에서 추출 (어깨 수기 관리)
-    "face-line": asset("/images/program-face-line.jpg"), // 실제 관리 사진 (고객 동의)
+    "face-line": unsplash("1642658615608-c741da5a75a4"), // 무료 사진(Unsplash) — 동양인 여성, 어두운 웜톤
   } as Record<string, string>,
   // 공간 사진첩 — 앞 3장은 실제 매장 사진 (0: 큰 세로, 1: 아치 세로, 2: 정사각형 자리)
   spaceGallery: [

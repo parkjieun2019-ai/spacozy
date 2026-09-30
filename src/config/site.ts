@@ -24,9 +24,8 @@ export const site = {
     { day: "토요일", time: "09:30 – 17:00" },
     { day: "일요일", time: "정기 휴무" },
   ],
-  // name: 고객에게 보이는 활동명, realName: 본명(사업자 정보 등 공식 표기에 사용)
-  director: { name: "김마리", realName: "김명숙", since: 2006, years: 20 },
-  manager: { name: "켈리", years: "5년 이상" },
+  director: { name: "김명숙", since: 2006, years: 20 },
+  manager: { name: "켈리", years: "10년 이상" },
   // TODO: 대표자·사업자등록번호 확인 후 입력
   business: { owner: "김명숙", registration: "" },
   instagram: "", // TODO
