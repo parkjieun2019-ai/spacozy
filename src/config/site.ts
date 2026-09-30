@@ -21,7 +21,7 @@ export const site = {
   phoneNaver: "0507-1490-9595",
   hours: [
     { day: "월 – 금", time: "09:30 – 20:00" },
-    { day: "토요일", time: "09:30 – 20:00" },
+    { day: "토요일", time: "09:30 – 17:00" },
     { day: "일요일", time: "정기 휴무" },
   ],
   director: { name: "김명숙", since: 2006, years: 20 },
