@@ -32,7 +32,7 @@ export const site = {
   links: {
     booking: NAVER_BOOKING_URL || naverPlaceSearch,
     map: naverPlaceSearch,
-    reviews: naverPlaceSearch,
+    reviews: "https://m.place.naver.com/place/36561423/review/visitor", // 네이버 플레이스 방문자 리뷰
     kakaoChat: KAKAO_CHANNEL_ID ? `https://pf.kakao.com/${KAKAO_CHANNEL_ID}/chat` : "",
     kakaoAdd: KAKAO_CHANNEL_ID ? `https://pf.kakao.com/${KAKAO_CHANNEL_ID}/friend` : "",
     naverTalk: NAVER_TALK_ID ? `https://talk.naver.com/${NAVER_TALK_ID}` : naverPlaceSearch,

@@ -8,8 +8,12 @@ function Card({ r }: { r: Review }) {
       {SAMPLE_REVIEWS && (
         <span className="absolute right-5 top-5 rounded-full border border-line px-2.5 py-0.5 text-[0.72rem] text-muted">예시</span>
       )}
-      <p className="text-[1.05rem] tracking-[0.15em] text-[#c9a35b]" aria-label="별점 5점">
-        ★★★★★
+      {/* 출처 표시 — 네이버 방문자 리뷰는 별점이 공개되지 않아 별 대신 출처·시기를 적습니다 */}
+      <p className="flex items-center gap-2 text-[0.78rem] tracking-[0.04em] text-muted">
+        <span className="inline-flex h-4 w-4 items-center justify-center rounded-[3px] bg-[#03c75a] font-display text-[0.62rem] font-bold text-white" aria-hidden>
+          N
+        </span>
+        네이버 방문자 리뷰{r.date && <span>· {r.date}</span>}
       </p>
       <p className="mt-4 flex-1 font-serif text-[1.08rem] leading-[1.75] text-ink">“{r.text}”</p>
       <div className="mt-6 flex items-center justify-between gap-3 border-t border-line pt-4">
@@ -38,9 +42,11 @@ export default function ReviewCards() {
           </div>
         ))}
       </div>
-      {SAMPLE_REVIEWS && (
-        <p className="mt-6 text-center text-[0.85rem] text-muted">※ 위 후기는 디자인 확인용 예시이며, 실제 고객 후기로 교체될 예정입니다.</p>
-      )}
+      <p className="mt-6 text-center text-[0.85rem] text-muted">
+        {SAMPLE_REVIEWS
+          ? "※ 위 후기는 디자인 확인용 예시이며, 실제 고객 후기로 교체될 예정입니다."
+          : "※ 네이버 플레이스 방문자 리뷰에서 일부를 발췌했습니다. 닉네임은 가렸습니다."}
+      </p>
       <div className="mt-8 text-center">
         <Button href={site.links.reviews} variant="outline">
           네이버 후기 더 보기
