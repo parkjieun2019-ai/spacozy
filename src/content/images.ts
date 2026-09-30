@@ -17,9 +17,15 @@ export const images = {
   directorStory: asset("/images/director-temp.webp"), // TODO: 대표원장 실제 사진 (현재는 AI/스톡풍 임시 인물 사진 — 실제 사진 확보 시 교체)
   // 대표원장 자필 서명 (투명 PNG)
   signature: asset("/images/signature.png"),
+  // 프로그램 페이지(/programs) 큰 사진
   programs: {
     balance: asset("/images/program-balance.jpg"), // 실제 관리 영상에서 추출 (어깨 수기 관리)
-    "face-line": unsplash("1642658615608-c741da5a75a4"), // 무료 사진(Unsplash) — 동양인 여성, 어두운 웜톤
+    "face-line": unsplash("1788333886466-3b4fe42a949a"), // 무료 사진(Unsplash) — 한국인 여성 옆모습, 눈 감음, 웜톤
+  } as Record<string, string>,
+  // 홈 시그니처 타일 배경 (사용자 요청: 기존 사진 유지)
+  programTiles: {
+    balance: unsplash("1741522509438-a120c0bb5e88"),
+    "face-line": unsplash("1706795033728-9232ef548a16"),
   } as Record<string, string>,
   // 공간 사진첩 — 앞 3장은 실제 매장 사진 (0: 큰 세로, 1: 아치 세로, 2: 정사각형 자리)
   spaceGallery: [

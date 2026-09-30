@@ -121,7 +121,7 @@ export default function Home() {
             <Link key={p.slug} href={`/programs#${p.slug}`} className="group relative block h-[70svh] min-h-[420px] overflow-hidden md:h-[82vh]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={images.programs[p.slug]}
+                src={images.programTiles[p.slug]}
                 alt={p.name}
                 loading="lazy"
                 className="tone-photo absolute inset-0 h-full w-full object-cover transition-transform duration-[1.8s] ease-out group-hover:scale-105"
