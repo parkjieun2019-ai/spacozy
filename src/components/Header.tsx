@@ -85,9 +85,9 @@ export default function Header() {
           href={site.links.booking}
           target="_blank"
           rel="noopener noreferrer"
-          className="col-start-3 row-start-1 justify-self-end border border-primary px-3 py-1.5 text-[0.85rem] font-semibold text-primary lg:hidden"
+          className="col-start-3 row-start-1 inline-flex items-center gap-1.5 justify-self-end border border-primary px-3 py-1.5 text-[0.85rem] font-semibold text-primary lg:hidden"
         >
-          예약
+          <NaverMark /> 예약
         </a>
       </div>
 
