@@ -63,7 +63,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-primary px-5 py-2.5 text-[0.9rem] tracking-[0.08em] text-primary transition-colors duration-500 hover:bg-primary hover:text-paper"
           >
-            <NaverMark /> 네이버 예약
+            <NaverMark /> 예약하기
           </a>
         </nav>
 
@@ -131,7 +131,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="flex min-h-13 items-center justify-center gap-2 bg-primary text-[1rem] font-semibold text-paper"
               >
-                <NaverMark /> 네이버 예약하기
+                <NaverMark /> 예약하기
               </a>
               <a href={site.links.tel} className="flex min-h-13 items-center justify-center border border-primary text-[1rem] font-semibold text-primary">
                 {site.phone}

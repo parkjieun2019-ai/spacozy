@@ -118,7 +118,7 @@ export default function StoryPage() {
           </ol>
           <div className="mt-12">
             <Button href={site.links.booking}>
-              <NaverMark /> 네이버 예약으로 첫 방문 예약
+              <NaverMark /> 첫 방문 예약하기
             </Button>
           </div>
         </Container>

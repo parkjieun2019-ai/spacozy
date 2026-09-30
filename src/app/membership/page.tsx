@@ -28,7 +28,7 @@ export default function MembershipPage() {
             </p>
             <div className="mt-auto pt-10">
               <Button href={site.links.booking} variant="light">
-                <NaverMark /> 네이버 예약에서 웰컴 혜택 받기
+                <NaverMark /> 웰컴 혜택 예약하기
               </Button>
             </div>
           </article>

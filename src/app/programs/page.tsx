@@ -47,7 +47,7 @@ export default function ProgramsPage() {
 
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                     <Button href={p.bookingUrl ?? site.links.booking}>
-                      <NaverMark /> 네이버 예약으로 이 프로그램 예약
+                      <NaverMark /> 이 프로그램 예약하기
                     </Button>
                     <Button href={`#${p.slug}-price`} variant="outline">
                       세부 프로그램 · 가격

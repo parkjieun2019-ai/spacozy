@@ -138,14 +138,14 @@ export default function StaffProfiles() {
                 rel="noopener noreferrer"
                 className="flex min-h-13 items-center justify-center gap-1.5 bg-primary text-[0.95rem] font-semibold text-paper transition-colors hover:bg-primary-soft"
               >
-                <NaverMark /> 네이버 예약
+                <NaverMark /> 예약하기
               </a>
               <a
                 href={consultHref}
                 {...(consultHref.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="flex min-h-13 items-center justify-center gap-1.5 border border-primary text-[0.95rem] font-semibold text-primary transition-colors hover:bg-primary hover:text-paper"
               >
-                <KakaoMark /> 카톡 상담
+                <KakaoMark /> 카카오톡 상담
               </a>
             </div>
           </div>

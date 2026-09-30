@@ -46,8 +46,8 @@ function TalkTalkIcon({ className = "" }: { className?: string }) {
 }
 
 const items = [
-  { label: "네이버 예약", short: "예약", href: site.links.booking, Icon: NaverIcon },
-  { label: "카톡 상담", short: "카톡", href: kakao, Icon: KakaoIcon },
+  { label: "예약하기", short: "예약", href: site.links.booking, Icon: NaverIcon },
+  { label: "카카오톡 상담", short: "카톡", href: kakao, Icon: KakaoIcon },
   { label: "네이버 톡톡", short: "톡톡", href: site.links.naverTalk, Icon: TalkTalkIcon },
   { label: `전화 ${site.phone}`, short: "전화", href: site.links.tel, Icon: PhoneIcon },
 ];

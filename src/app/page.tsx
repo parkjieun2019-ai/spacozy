@@ -55,7 +55,7 @@ export default function Home() {
             </div>
             <div className="fade-up flex flex-col gap-4 [animation-delay:.45s] sm:items-center">
               <Button href={site.links.booking}>
-                <NaverMark /> 네이버 예약
+                <NaverMark /> 예약하기
               </Button>
               <Link href="/membership#welcome" className="w-fit border-b border-accent/70 pb-0.5 text-[0.92rem] font-semibold text-accent transition-colors hover:text-primary">
                 첫 방문 혜택 보기 →
