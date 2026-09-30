@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-// GitHub Pages 미리보기용 정적 빌드: STATIC_EXPORT=1, NEXT_PUBLIC_BASE_PATH=/저장소이름
+// GitHub Pages 정적 빌드: STATIC_EXPORT=1 (정식 도메인이라 NEXT_PUBLIC_BASE_PATH 는 비움)
 const staticExport = process.env.STATIC_EXPORT === "1";
 
 const nextConfig: NextConfig = {

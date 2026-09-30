@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     template: "%s | 스파코지 SPA COZY",
   },
   description: site.description,
+  // 각 페이지의 정식 주소(canonical) — 옛 github.io 주소가 검색에 중복으로 잡히지 않게
+  alternates: { canonical: "./" },
   ...(site.preview && { robots: { index: false, follow: false } }),
   keywords: ["스파코지", "SPA COZY", "죽전 에스테틱", "수지 에스테틱", "성복동 피부관리", "수기 테라피", "전신 관리", "얼굴선 관리"],
   openGraph: {
