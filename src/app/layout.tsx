@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   description: site.description,
   // 각 페이지의 정식 주소(canonical) — 옛 github.io 주소가 검색에 중복으로 잡히지 않게
   alternates: { canonical: "./" },
+  // 네이버 서치어드바이저 소유확인 (삭제 금지). 구글은 public/googleb62fd0200a315334.html 파일로 확인됨
+  verification: { other: { "naver-site-verification": "cf982f1d819734f7aced26c6e9aa5a5ea9334cd7" } },
   ...(site.preview && { robots: { index: false, follow: false } }),
   keywords: ["스파코지", "SPA COZY", "죽전 에스테틱", "수지 에스테틱", "성복동 피부관리", "수기 테라피", "전신 관리", "얼굴선 관리"],
   openGraph: {
