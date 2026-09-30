@@ -50,11 +50,11 @@ type BtnProps = {
   className?: string;
 };
 
-/** 네이버 예약으로 이동하는 버튼임을 알려주는 초록 N 마크 */
+/** 네이버 예약으로 이동하는 버튼 표시 — 버튼 글자색과 같은 단색 선 안의 N (버튼과 어울리게) */
 export function NaverMark({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`inline-flex h-[1.15em] w-[1.15em] shrink-0 items-center justify-center rounded-[3px] bg-[#03c75a] font-display text-[0.72em] font-bold leading-none text-white ${className}`}
+      className={`inline-flex h-[1.2em] w-[1.2em] shrink-0 items-center justify-center rounded-[4px] border border-current font-display text-[0.7em] font-bold leading-none opacity-90 ${className}`}
       aria-hidden
     >
       N
@@ -62,17 +62,20 @@ export function NaverMark({ className = "" }: { className?: string }) {
   );
 }
 
-/** 카카오톡 상담으로 이동하는 버튼임을 알려주는 노란 말풍선 마크 */
+/** 카카오톡 상담으로 이동하는 버튼 표시 — 버튼 글자색과 같은 단색 선 말풍선 */
 export function KakaoMark({ className = "" }: { className?: string }) {
   return (
-    <span
-      className={`inline-flex h-[1.15em] w-[1.15em] shrink-0 items-center justify-center rounded-[3px] bg-[#fee500] text-[#191919] ${className}`}
+    <svg
+      viewBox="0 0 24 24"
+      className={`h-[1.2em] w-[1.2em] shrink-0 opacity-90 ${className}`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinejoin="round"
       aria-hidden
     >
-      <svg viewBox="0 0 24 24" className="h-[0.8em] w-[0.8em]" fill="currentColor">
-        <path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7L5.8 21l4-2.5c.7.1 1.4.2 2.2.2 5.5 0 10-3.6 10-8S17.5 3 12 3Z" />
-      </svg>
-    </span>
+      <path d="M12 4C6.9 4 3 7.3 3 11.3c0 2.5 1.6 4.7 4.1 6L6.3 20.5l4-2.4c.6.1 1.1.1 1.7.1 5.1 0 9-3.3 9-7.3S17.1 4 12 4Z" />
+    </svg>
   );
 }
 
