@@ -26,7 +26,7 @@ export default function ProgramsPage() {
           <section key={p.slug} id={p.slug} className={`scroll-mt-24 py-20 md:py-28 ${idx % 2 ? "bg-mist/50" : ""}`}>
             <Container>
               <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-                <Photo label={p.name} src={images.programs[p.slug]} position={p.slug === "face-line" ? "top" : "center"} tone={idx % 2 ? "sand" : "wood"} className="aspect-[4/3] w-full md:aspect-[4/5]" />
+                <Photo label={p.name} src={images.programs[p.slug]} tone={idx % 2 ? "sand" : "wood"} className="aspect-[4/3] w-full md:aspect-[4/5]" />
                 <div>
                   <Eyebrow className="mb-3">
                     Signature {String(idx + 1).padStart(2, "0")} · {p.nameEn}
