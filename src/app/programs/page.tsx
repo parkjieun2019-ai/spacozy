@@ -17,7 +17,7 @@ export default function ProgramsPage() {
       <PageHero
         en="Signature Therapy"
         title="스파코지 시그니처 테라피"
-        desc={`모든 프로그램은 대표원장 또는 실장 중 원하시는 분을 선택하실 수 있습니다.`}
+        desc={`원하시는 담당자(대표원장 · 실장)가 있으면 예약 요청사항에 적어 주세요.`}
       />
 
       {programs

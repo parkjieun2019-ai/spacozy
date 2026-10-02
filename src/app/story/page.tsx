@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 // TODO: 자격증 취득 · 매장 오픈 연도를 받으면 추가
 const timeline = [
   { year: String(site.director.since), text: "에스테틱 테라피스트로 첫 손길을 시작하다" },
-  { year: "·····", text: "수기 테라피 한 길을 걸으며 수많은 고객의 몸을 읽다" },
+  { year: "20 Years", text: "수기 테라피 한 길을 걸으며 수많은 고객의 몸을 읽다" },
   { year: String(site.director.since + site.director.years), text: `${site.director.years}년의 손끝, 스파코지에서 당신을 기다립니다` },
 ];
 

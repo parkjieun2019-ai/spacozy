@@ -46,8 +46,9 @@ export const images = {
     { src: asset("/images/space-room.jpg"), caption: "프라이빗 관리실" },
     { src: asset("/images/space-hallway.jpg"), caption: "관리실로 이어지는 복도" },
     { src: asset("/images/space-welcome-tea.jpg"), caption: "웰컴 티" },
-    { src: unsplash("1706795033849-7ca391f007c5", 1600), caption: "관리 준비" }, // TODO: 실제 사진
-    { src: unsplash("1540555700478-4be289fbecef", 1600), caption: "정갈한 어메니티" }, // TODO: 실제 사진
+    // 사진첩에는 실제 매장 사진만 넣습니다 (타 매장 스톡 사진은 손님에게 오해를 줄 수 있어 제거).
+    // TODO: 관리 준비·어메니티 실제 사진을 받으면 여기에 추가
+    { src: asset("/images/exterior-parking.jpg"), caption: "건물 외관 · 주차장 입구" },
   ],
   // 오시는 길 — 건물 외관과 주차장 입구
   exterior: asset("/images/exterior-parking.jpg"),

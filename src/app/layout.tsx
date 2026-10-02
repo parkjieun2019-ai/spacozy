@@ -34,7 +34,10 @@ export const metadata: Metadata = {
     siteName: "스파코지 SPA COZY",
     title: "스파코지 SPA COZY | 20년 경력 수기 테라피",
     description: site.description,
+    // 카카오톡 · 문자 · SNS에 링크를 붙였을 때 보이는 미리보기 사진
+    images: [{ url: "/images/hero-1.jpg", width: 1800, height: 1004, alt: "스파코지 수기 테라피" }],
   },
+  twitter: { card: "summary_large_image", images: ["/images/hero-1.jpg"] },
 };
 
 export const viewport: Viewport = {
