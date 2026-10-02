@@ -81,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* 3. Intro */}
-      <section className="py-28 md:py-44">
+      <section className="pb-20 pt-4 md:py-44">
         <Container className="max-w-3xl text-center">
           <p className="reveal font-display text-[1.2rem] italic tracking-[0.06em] text-accent">Since {site.director.since} · Private Beauty Ritual</p>
           <h2 className="reveal mt-8 font-serif text-[1.45rem] leading-[1.8] text-ink md:text-[1.9rem]">

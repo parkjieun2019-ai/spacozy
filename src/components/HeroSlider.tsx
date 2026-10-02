@@ -45,12 +45,13 @@ export default function HeroSlider() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/45 to-transparent" />
 
       {/* 캡션 + 넘김 표시 */}
-      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-6 md:p-10">
-        <p key={index} className="fade-up font-display text-[1.25rem] italic text-paper md:text-[1.6rem]">
+      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:gap-6 md:p-10">
+        <p key={index} className="fade-up whitespace-nowrap font-display text-[1.15rem] italic text-paper md:text-[1.6rem]">
           {slides[index].caption}
         </p>
-        <div className="flex items-center gap-4 text-paper">
-          <span className="font-display text-[1rem] tabular-nums">
+        <div className="flex shrink-0 items-center gap-4 text-paper">
+          {/* 휴대폰에서는 자리가 좁아 숫자(01 / 03)는 숨기고 막대만 보여줍니다 */}
+          <span className="hidden whitespace-nowrap font-display text-[1rem] tabular-nums sm:inline">
             {String(index + 1).padStart(2, "0")} <span className="text-paper/50">/ {String(slides.length).padStart(2, "0")}</span>
           </span>
           <div className="flex gap-2">
@@ -61,7 +62,7 @@ export default function HeroSlider() {
                 onClick={() => setIndex(i)}
                 aria-label={`${i + 1}번째 사진 보기`}
                 aria-current={i === index}
-                className="relative h-[3px] w-10 overflow-hidden rounded-full bg-paper/35 md:w-14"
+                className="relative h-[3px] w-7 overflow-hidden rounded-full bg-paper/35 sm:w-10 md:w-14"
               >
                 <span
                   key={index}

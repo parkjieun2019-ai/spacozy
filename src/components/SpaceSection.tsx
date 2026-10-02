@@ -22,7 +22,8 @@ export default function SpaceSection() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={gallery[0].src} alt="" className="tone-photo absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/60" />
+          {/* 사진 위 글씨가 잘 읽히도록 어둡게 덮음 */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/50 to-black/70" />
           <div className="relative flex h-full flex-col items-center justify-center px-8 text-center text-paper">
             <p className="whitespace-nowrap font-display text-[1.9rem] leading-none">
               SPA COZY,<span className="italic">Space</span>

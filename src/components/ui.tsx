@@ -86,11 +86,12 @@ export function Button({ href, children, variant = "solid", external, className 
     light: "bg-paper text-primary shadow-sm shadow-ink/10 hover:bg-mist",
     "ghost-light": "border border-paper/60 text-paper hover:bg-paper hover:text-primary",
   }[variant];
-  const cls = `group inline-flex min-h-14 items-center justify-center gap-4 px-8 text-[0.98rem] tracking-[0.04em] transition-all duration-300 hover:-translate-y-px ${styles} ${className}`;
+  // 휴대폰: 글자가 줄바꿈되지 않게(전화번호 쪼개짐 방지) 좌우 여백을 줄이고 장식 선은 숨김
+  const cls = `group inline-flex min-h-14 items-center justify-center gap-3 whitespace-nowrap px-5 text-[0.98rem] tracking-[0.04em] transition-all duration-300 hover:-translate-y-px sm:gap-4 sm:px-8 ${styles} ${className}`;
   const inner = (
     <>
       {children}
-      <span className="h-px w-5 bg-current transition-all duration-300 group-hover:w-8" aria-hidden />
+      <span className="hidden h-px w-5 bg-current transition-all duration-300 group-hover:w-8 sm:block" aria-hidden />
     </>
   );
   if (external || href.startsWith("http") || href.startsWith("tel:"))
