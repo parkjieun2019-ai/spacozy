@@ -9,7 +9,7 @@ export const NAVER_BOOKING_ITEMS = {
   memberSkin: `${NAVER_BOOKING_URL}/items/5190145`, // 회원권·정액권 피부관리 (회원 전용)
   memberBody: `${NAVER_BOOKING_URL}/items/6937201`, // 회원권·정액권 바디·전신관리 (회원 전용)
 } as const;
-const KAKAO_CHANNEL_ID = "_TDWqG"; // 카카오톡 채널 "스파코지" (pf.kakao.com/_TDWqG)
+const KAKAO_CHANNEL_ID = "_ALtxiX"; // 카카오톡 채널 "스파코지" B채널 (pf.kakao.com/_ALtxiX) — A채널(_TDWqG)은 심사 반려 반복으로 사용 안 함
 const NAVER_TALK_ID = "w4c605"; // 스파코지 네이버 플레이스에 등록된 톡톡 (talk.naver.com/w4c605)
 
 const naverPlaceSearch = "https://map.naver.com/p/entry/place/36561423";
